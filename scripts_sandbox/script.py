@@ -42,10 +42,10 @@ def write_soup(path, soup):
     writes the soup to the path
     """
 
-    with open("0-" + path, 'w') as f:
-        # formatter = HTMLFormatter(indent=4)
+    with open(path + "_", 'w') as f:
+        formatter = HTMLFormatter(indent=4)
         # print(index.prettify(formatter=formatter))
-        f.write(soup.prettify(formatter="html5"))
+        f.write(soup.prettify(formatter=formatter))
 
 
 def process(file):
