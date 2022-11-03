@@ -3,3 +3,5 @@
 *.swp
 *~
 
+# generated .html files in root directory of each exercise
+Exercise[1-5]/*.html
