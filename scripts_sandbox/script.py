@@ -1,11 +1,15 @@
 
-import argparse # TODO: use it
-import glob
+import argparse
+import os
+import pathlib
 import re
 import sys
 
 from bs4 import BeautifulSoup
 from bs4.formatter import HTMLFormatter
+
+__version__ = "1.0"
+
 
 INCLUDE_TAG = "xinclude"
 VALID_INCLUDE_PATHS = re.compile(".html$")
@@ -13,62 +17,72 @@ VALID_INCLUDE_PATHS = re.compile(".html$")
 IMPORT_TAG = "ximport"
 VALID_IMPORT_PATHS = re.compile(".csv$")
 
-def arg_parse():
-    """
-    returns: a list of the files read from sys.argv, interpreted as glob
-    """
-
-    args = sys.argv
-
-    files = []
-    for glob_pattern in args[args.index("--") + 1:]:
-        files.extend(glob.iglob(glob_pattern))
-
-    return files
-
 
 def get_soup(path):
-    """
-    returns: a BeautifulSoup object of the file at the specified path
-    """
-
     with open(path) as f:
         html = f.read()
 
     return BeautifulSoup(html, "html.parser")
 
-def write_soup(path, soup):
-    """
-    writes the soup to the path
-    """
 
-    with open(path + "_", 'w') as f:
-        formatter = HTMLFormatter(indent=4)
-        # print(index.prettify(formatter=formatter))
-        f.write(soup.prettify(formatter=formatter))
+def write_soup(soup, path):
+    formatter = HTMLFormatter(indent=4)
+    html = soup.prettify(formatter=formatter)
+
+    with open(path, 'w') as f:
+        f.write(html)
 
 
-def process(file):
-    soup = get_soup(file)
-
+def process_soup(soup, root):
     include_tags = soup.find_all(INCLUDE_TAG, path=VALID_INCLUDE_PATHS)
 
     for include_tag in include_tags:
-        file_to_open = include_tag["path"]
-        header = get_soup(file_to_open)
-        include_tag.replace_with(header)
+        file_to_open = pathlib.Path(os.path.join(root, include_tag["path"])).resolve().__str__()
+        html = get_soup(file_to_open)
+        include_tag.replace_with(html)
 
     # TODO: import tags
     import_tags = soup.find_all(IMPORT_TAG, path=VALID_IMPORT_PATHS)
 
-    write_soup(file, soup)
+    return soup
+
+
+def process_file(path, root, out):
+    if (not os.path.isfile(path)):
+        return
+
+    soup = get_soup(path)
+
+    processed_soup = process_soup(soup, root)
+
+    outfile = os.path.join(out, os.path.basename(path))
+
+    write_soup(processed_soup, outfile)
+
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Processes some html files", allow_abbrev=False, fromfile_prefix_chars='@')
+
+    parser.add_argument("-v", "--version", action="version", version=f"%(prog)s {__version__}")
+    parser.add_argument("-r", "--root", dest="root", action="store", default='.',\
+            help="the root of the relative links of the xinclude tags")
+    parser.add_argument("-d", "--dest", dest="out", action="store", default='.',\
+            help="where to place processed files")
+    parser.add_argument("files", nargs='*',\
+            help="files to process")
+
+    return parser.parse_args()
 
 
 def main():
-    files = arg_parse()
+    args = parse_args()
 
-    for file in files:
-        process(file)
+    if not os.path.exists(args.out):
+        os.mkdir(args.out)
+
+    for file in args.files:
+        process_file(os.path.abspath(file), os.path.abspath(args.root), args.out)
 
 
 if __name__ == "__main__":
