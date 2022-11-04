@@ -1,5 +1,6 @@
 
 import argparse
+import glob
 import os
 import pathlib
 import re
@@ -81,7 +82,11 @@ def main():
     if not os.path.exists(args.out):
         os.mkdir(args.out)
 
-    for file in args.files:
+    files_to_process = []
+    for glob_pattern in args.files:
+        files_to_process.extend(glob.iglob(glob_pattern))
+
+    for file in files_to_process:
         process_file(os.path.abspath(file), os.path.abspath(args.root), args.out)
 
 
