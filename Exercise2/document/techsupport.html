@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<xinclude path="./shared_elements/head.html"/>
+	<body id="top">
+		<xinclude path="./shared_elements/header.html"/>
+
+		<h2>Tech Support Form</h2>
+		<main>
+			<article>
+				<form>
+					<fieldset>
+						<legend>Customer Information</legend>
+
+						<label for="first_name">First Name</label>
+						<input type="text" id="first_name" name="first_name" placeholder="John" required>
+
+						<label for="last_name">Last Name</label>
+						<input type="text" id="last_name" name="last_name" placeholder="Smith" required>
+
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" placeholder="johnsmith@company.com" required>
+
+						<label for="telephone_number">Telephone Number</label>
+						<input type="tel" id="telephone_number" name="telephone_number" placeholder="6912345678" required>
+					</fieldset>
+
+					<fieldset>
+						<legend>Product Information</legend>
+
+						<label for="prod_code">Product Code</label>
+						<input type="text" id="prod_code" name="product_code" placeholder="123ABC" pattern="[0-9]{3}[A-Z]{3}" required title="3 digits followed by 3 capital letters">
+
+						<label for="purchase_date">Purchase Date</label>
+						<input type="date" id="purchase_date" name="purchase_date" required>
+
+						<label for="receipt">Receipt</label>
+						<input type="file" id="receipt" name="receipt" required accept="pdf">
+
+						<label for="problem">Product Description</label>
+						<input type="text" id="problem" name="problem" required>
+					</fieldset>
+					<input type="submit" id="btn_submit" name="Submit">
+					<input type="reset" id="btn_reset" name="Reset">
+				</form>
+			</article>
+		</main>
+		<xinclude path="./shared_elements/footer.html"/>
+	</body>
+</html>
+
