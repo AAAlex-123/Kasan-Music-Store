@@ -1,0 +1,84 @@
+
+* {
+	/* border: 2px solid green; */
+}
+
+body {
+	background-color: rgb(202, 236, 244);
+}
+
+main > article > section {
+	margin: 2rem 2rem;
+	padding: 1.5rem;
+	background-color: #FFFFFF;
+	border-radius: 40px;
+	box-shadow: 0px 0px 5px 2px gray;
+}
+
+article, section {
+	display: block;
+}
+
+aside.left {
+	margin: 0 1.5rem 0 0;
+	height: 100%;
+}
+
+aside.right {
+	margin: 0 0 0 1.5rem;
+}
+
+img.book-cover {
+	width: 10em;
+	height: auto;
+}
+
+img.rating {
+	width: 10rem;
+	height: auto;
+}
+
+p.short-description {
+	font: 1.2em 'Times New Roman', serif;
+}
+
+p.extended-description {
+	font: 1.0em 'Times New Roman', serif;
+}
+
+span.product-code {
+	font: italic 1em 'Courier New', monospace;
+}
+
+span.price {
+	font: italic 1.2em 'Courier New', monospace;
+}
+
+strong {
+	font: bold 1.8em 'Georgia', serif;
+}
+
+
+
+/* TODO: replace this hacky code on Exercise3 */
+/* https://stackoverflow.com/questions/218760/how-do-you-keep-parents-of-floated-elements-from-collapsing */
+aside.left {
+	float: left;
+}
+
+aside.left * {
+	/* float: left; */
+	display: block;
+}
+
+aside.right {
+	float: right;
+}
+
+section::after {
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+
