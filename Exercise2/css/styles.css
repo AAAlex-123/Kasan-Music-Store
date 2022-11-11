@@ -177,7 +177,7 @@ footer img {
     display:inline;
 }
 
-footer> address {
+footer> address#contact {
     padding-top: 1.25em;
     font-size: 1em;
     text-decoration: solid;
@@ -189,12 +189,12 @@ footer> address {
     display:inline-block;
 }
 
-footer> address> a:hover, a:active{
+footer> address#contact> a:hover, a:active{
     color: red;
     text-decoration: underline;
 }
 
-footer>a {
+footer>a#stop {
     font-size: 2em;
     text-decoration: underline;
     
