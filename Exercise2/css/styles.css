@@ -38,6 +38,13 @@ img.rating {
 	height: auto;
 }
 
+img.img-bio{
+    float: left;
+    border-radius: 50%;
+    padding: 1.5em 1.5em 1.5em 1.5em;
+    max-width: 7.5em;
+}
+
 p.short-description {
 	font: 1.2em 'Times New Roman', serif;
 }
@@ -124,7 +131,7 @@ header#header ul{
 
     }
 
-    header#header a:link {
+    header#header a.test:link {
         color: black;
         text-decoration: none;
         background-color: rgb(208, 230, 245);
@@ -135,7 +142,7 @@ header#header ul{
 
     }
 
-    header#header a:visited {
+    header#header a.test:visited {
         color: purple;
         text-decoration: none;
         background-color: rgb(208, 230, 245);
@@ -146,8 +153,7 @@ header#header ul{
     }
 
 
-header#header a:hover, a:active {
-    color: red;
+header#header a.test:hover, a.test:active {
     text-decoration: underline;
     background-color: rgb(65, 168, 236);
     padding: 0.875em 1.5625em;
@@ -171,13 +177,13 @@ footer{
 footer img {
     height: auto;
     margin-left: 1.5em;
-    margin-right: auto;
+    margin-right: 1.5em;
     padding-top: 1.2em;
     width: 5em;
-    display:inline;
+    float:left;
 }
 
-footer> address#contact {
+footer>address#contact {
     padding-top: 1.25em;
     font-size: 1em;
     text-decoration: solid;
@@ -189,7 +195,7 @@ footer> address#contact {
     display:inline-block;
 }
 
-footer> address#contact> a:hover, a:active{
+footer>address#contact> a:hover, a:active{
     color: red;
     text-decoration: underline;
 }
@@ -212,7 +218,67 @@ footer ul{
 footer ul li {
     display: inline-block;
     padding: 0.875em 1.5625em;
+    color:aliceblue;
 
 }
 
+h2.social {
+    color:aliceblue;
+    text-decoration: solid;
+    font-family: "Lucida Console", "Courier New", monospace;
+    display:inline-block;
+}
+
+a#top{
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 55em;
+    margin-right: auto;
+    font-size: 1.5em;
+}
+
+h2 {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    padding-top: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input:not([type="submit"], [type="reset"]){
+    border-width: 0.25em;
+    width: 100%;
+    padding: 0.75em 1.25em;
+    margin: 0.5em 0;
+    box-sizing: border-box;
+}
+
+fieldset#field1{
+    background-color: rgb(253, 229, 120);
+    padding: 0.75em 1.25em;
+    margin-bottom: 1.5em;
+}
+
+fieldset#field2{
+    background-color: rgb(253, 229, 120);
+    padding: 0.75em 1.25em;
+    margin-bottom: 1.5em;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #33bcdf;
+    border: none;
+    color: white;
+    padding: 1em 2em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 0.25em 0.125em;
+    cursor: pointer;
+    border-radius: 0.5em;
+}
+
+form{
+    background-color: rgb(247, 156, 52);
+}
 
