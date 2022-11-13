@@ -13,6 +13,7 @@ main > article > section {
 	background-color: #FFFFFF;
 	border-radius: 40px;
 	box-shadow: 0px 0px 5px 2px gray;
+    margin-bottom: 1.5em;
 }
 
 article, section {
@@ -22,6 +23,11 @@ article, section {
 aside.left {
 	margin: 0 1.5rem 0 0;
 	height: 100%;
+}
+
+aside.left img{
+    padding: 1.5em 1.5em 1.5em 1.5em;
+    max-width: 10em;
 }
 
 aside.right {
@@ -45,8 +51,90 @@ img.img-bio{
     max-width: 7.5em;
 }
 
+img.type-image{
+    float: left;
+    padding: 1.5em 1.5em 1.5em 1.5em;
+    width:  10em;
+    height: 10em;
+    object-fit: cover;
+
+}
+
+a.book-title:link{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.5em;
+    color: rgb(15, 21, 138);
+    display:inline;
+}
+
+a.book-cover:hover, a.book-cover:active{
+    color:rgb(128, 40, 6);
+
+}
+
+form{
+    background-color: rgb(250, 187, 116);
+    margin: 2rem 2rem;
+	padding: 1.5rem;
+	border-radius: 40px;
+	box-shadow: 0px 0px 5px 2px gray;
+}
+
+legend{
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5em;
+    color:rgb(47, 51, 54);
+}
+
+label{
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.75em;
+    color:rgb(47, 51, 54);
+}
+
+input{
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.75em;
+    color:rgb(47, 51, 54);
+}
+
+ul.product-list{
+    display: inline-block;
+    list-style-type: circle; 
+    list-style-position: inside;
+    padding: 0;
+    margin: 1.5em;
+    vertical-align: bottom;
+    text-align: left;
+
+}
+
+ul.product-list li{
+    margin-top: 0.725em;
+    font-size: 0.875em;
+    font-style: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+ul.product-list li:first-child{
+    margin-top:0;
+
+}
+
+summary{
+    font-size: 2em;
+    font-style: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
 p.short-description {
-	font: 1.2em 'Times New Roman', serif;
+	font: 1.5em 'Times New Roman', serif;
+    margin-right: 15em;
 }
 
 p.extended-description {
@@ -54,11 +142,15 @@ p.extended-description {
 }
 
 span.product-code {
-	font: italic 1em 'Courier New', monospace;
+    padding: 1.5em 1.5em 1.5em 1.5em;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    font-style: italic;
 }
 
 span.price {
-	font: italic 1.2em 'Courier New', monospace;
+	font-family: 'Times New Roman', Times, serif;
+    font-size: 3.5em;
 }
 
 strong {
@@ -90,7 +182,6 @@ section::after {
 }
 
 header#header{
-
     background-image: linear-gradient(to bottom right, rgb(57, 126, 196), rgb(153, 204, 255));
     border-radius: 3.5em;
 }
@@ -103,6 +194,7 @@ header#header img {
     padding-top: 1.2em;
     width: 12em;
     display:inline;
+    pointer-events: none;
 }
 
 header#header h1{
@@ -114,6 +206,7 @@ header#header h1{
     text-align: center;
     margin-left:3.2em;;
     display:inline;
+    pointer-events: none;
 }
 
 header#header ul{
@@ -240,8 +333,9 @@ a#top{
 h2 {
     margin-left: 1.5em;
     margin-right: 1.5em;
-    padding-top: 1.2em;
+    padding-top: 0.75em;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5em;
 }
 
 input:not([type="submit"], [type="reset"]){
@@ -278,7 +372,4 @@ input[type=button], input[type=submit], input[type=reset] {
     border-radius: 0.5em;
 }
 
-form{
-    background-color: rgb(247, 156, 52);
-}
 
