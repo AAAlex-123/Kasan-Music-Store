@@ -1,5 +1,7 @@
 
 * {
+	margin: 0;
+	padding: 0;
 	/* border: 2px solid green; */
 }
 
@@ -7,167 +9,169 @@ body {
 	background-color: rgb(202, 236, 244);
 }
 
-main > article > section {
-	margin: 2rem 2rem;
-	padding: 1.5rem;
+main {
+	padding: 2.5rem;
+}
+
+main>article>section {
+	margin: 2rem 0;
+	padding: 1.0rem;
 	background-color: #FFFFFF;
 	border-radius: 40px;
 	box-shadow: 0px 0px 5px 2px gray;
-    margin-bottom: 1.5em;
 }
 
 article, section {
 	display: block;
 }
 
-aside.left {
-	margin: 0 1.5rem 0 0;
-	height: 100%;
+main>header>h2 {
+    margin: 1rem 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
 }
 
-aside.left img{
-    padding: 1.5em 1.5em 1.5em 1.5em;
-    max-width: 10em;
+img.product-preview {
+    padding: 1.5rem;
+    /* max-height: 20%;*/
+    max-width: 10rem;
+    display: block;
 }
 
-aside.right {
-	margin: 0 0 0 1.5rem;
-}
-
-img.book-cover {
-	width: 10em;
+img.product-cover {
+	width: 10rem;
 	height: auto;
+    padding: 0rem 1.5rem;
 }
 
 img.rating {
+	padding: 0rem 1.5rem;
 	width: 10rem;
 	height: auto;
 }
 
-img.img-bio{
-    float: left;
+img.img-bio {
     border-radius: 50%;
-    padding: 1.5em 1.5em 1.5em 1.5em;
-    max-width: 7.5em;
+    padding: 1.5rem;
+    max-width: 7.5rem;
 }
 
-img.type-image{
-    float: left;
-    padding: 1.5em 1.5em 1.5em 1.5em;
-    width:  10em;
-    height: 10em;
+img.type-image {
+    padding: 0 1.5rem;
+    width: 10rem;
+    height: 10rem;
     object-fit: cover;
-
 }
 
-img.product-image{
-    padding: 1.5em 1.5em 1.5em 1.5em;
+article>section>header {
+	display: block;
 }
 
-a.book-title:link{
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.5em;
+article>section>header>strong {
+	font: bold 1.8rem 'Georgia', serif;
+}
+
+article>section>header>strong>a:link, article>section>header>strong>a:visited{
     color: rgb(15, 21, 138);
-    display:inline;
+    text-decoration: none;
 }
 
-a.book-cover:hover, a.book-cover:active{
+article>section>header>strong>a:hover {
     color:rgb(128, 40, 6);
-
+    text-decoration: underline;
 }
 
-.return{
-    margin-left: 4em;
-    margin-right: 1.5em;
-    padding-top: 0.75em;
-    padding-bottom: 0.75em;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
+a.return {
+    padding: 0.5rem;
+    font: 1rem  Arial, Helvetica, sans-serif;
+
+    background-color: rgb(250, 187, 166);
+    border-radius: 5px;
 }
 
-form{
+a.return::before {
+	content: '<';
+}
+
+form {
     background-color: rgb(250, 187, 116);
-    margin: 2rem 2rem;
 	padding: 1.5rem;
-	border-radius: 40px;
+	border-radius: 30px;
 	box-shadow: 0px 0px 5px 2px gray;
 }
 
-legend{
-    font-weight: bold;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 1.5em;
-    color:rgb(47, 51, 54);
+form legend {
+	font: bold 1.5rem Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(47, 51, 54);
 }
 
-label{
-    font-weight: bold;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.75em;
-    color:rgb(47, 51, 54);
+form label, form input {
+	font: bold 0.75rem Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(47, 51, 54);
 }
 
-input{
-    font-weight: bold;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.75em;
-    color:rgb(47, 51, 54);
+form fieldset {
+    background-color: rgb(253, 229, 120);
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1.5rem;
 }
 
-ul.product-list{
+form input:not([type="submit"], [type="reset"]) {
+    border-width: 0.25rem;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #33bcdf;
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0.25rem 0.125rem;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+details summary {
+	padding: 1rem;
+	font: normal 1.5rem 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+details ul.product-list {
     display: inline-block;
     list-style-type: circle; 
     list-style-position: inside;
     padding: 0;
-    margin: 1.5em;
-    vertical-align: bottom;
-    text-align: left;
-
 }
 
-ul.product-list li{
-    margin-top: 0.725em;
-    font-size: 0.875em;
-    font-style: normal;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+details ul.product-list>li {
+	font: normal 1rem 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-ul.product-list li:first-child{
-    margin-top:0;
-
+details ul.product-list:first-child {
+    margin-top: 0rem;
 }
-
-summary{
-    font-size: 2em;
-    font-style: normal;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 
 p.short-description {
-	font: 1.5em 'Times New Roman', serif;
-    margin-right: 15em;
+	font: 1.5rem 'Times New Roman', serif;
 }
 
 p.extended-description {
-	font: 1.0em 'Times New Roman', serif;
+	font: 1.0rem 'Times New Roman', serif;
 }
 
 span.product-code {
-    padding: 1.5em 1.5em 1.5em 1.5em;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1em;
-    font-style: italic;
+    font: italic 1rem 'Times New Roman', serif;
 }
 
 span.price {
-	font-family: 'Times New Roman', Times, serif;
-    font-size: 3.5em;
-}
-
-strong {
-	font: bold 1.8em 'Georgia', serif;
+	font: 3.5rem 'Times New Roman', serif;
 }
 
 
@@ -176,11 +180,6 @@ strong {
 /* https://stackoverflow.com/questions/218760/how-do-you-keep-parents-of-floated-elements-from-collapsing */
 aside.left {
 	float: left;
-}
-
-aside.left * {
-	/* float: left; */
-	display: block;
 }
 
 aside.right {
@@ -194,195 +193,137 @@ section::after {
 	clear: both;
 }
 
-header#header{
+body>header {
     background-image: linear-gradient(to bottom right, rgb(57, 126, 196), rgb(153, 204, 255));
-    border-radius: 3.5em;
 }
 
+body>header::after {
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
 
-header#header img {
+body>header img {
+	padding: 3rem;
     height: auto;
-    margin-left: 25em;
-    margin-right: auto;
-    padding-top: 1.2em;
-    width: 12em;
-    display:inline;
-    pointer-events: none;
+    width: 15rem;
+    display: inline;
 }
 
-header#header h1{
-    font-family: "Times New Roman", Times, serif;
-    font-size: 3.5em;
+body>header h1 {
+	font: bold 3rem "Times New Roman", serif;
+
     background: -webkit-linear-gradient(rgb(201, 137, 42), rgb(8, 1, 20));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-align: center;
-    margin-left:3.2em;;
-    display:inline;
-    pointer-events: none;
+    display: block;
 }
 
-header#header ul{
-    display: table;  
+body>header>nav, header nav * {
+	display: block;
+}
+
+body>header>nav ul {
     margin: 0 auto;
-    min-width: 43.5em;
-    list-style: none;
-    padding-top: 1.25em;
-    font-size: 1.5em;
-    }
+    font-size: 1.2rem;
+}
 
-    header#header ul li {
+    body>header>nav ul li {
         display: inline-block;
-        padding: 0.875em 1.5625em;
-
+        padding: 0.5rem 0.7rem;
     }
 
-    header#header a.test:link {
+    body>header>nav a {
+        text-decoration: none;
+        padding: 1rem 1.5rem;
+        border-radius: 3.5rem;
+        display: inline-block;
+	    font-family: "Lucida Console", "Courier New", monospace;
+        background-color: rgb(208, 230, 245);
+    }
+
+    body>header>nav a.test:link, header>nav a.text:visited {
         color: black;
-        text-decoration: none;
-        background-color: rgb(208, 230, 245);
-        padding: 0.875em 1.5625em;
-        border-radius: 3.5em;
-        display: inline-block;
-        font-family: "Lucida Console", "Courier New", monospace;
-
     }
 
-    header#header a.test:visited {
-        color: purple;
-        text-decoration: none;
-        background-color: rgb(208, 230, 245);
-        padding: 0.875em 1.5625em;
-        border-radius: 3.5em;
-        display: inline-block;
-        font-family: "Lucida Console", "Courier New", monospace;
-    }
-
-
-header#header a.test:hover, a.test:active {
+body>header>nav a.test:hover, a.test:active {
     text-decoration: underline;
     background-color: rgb(65, 168, 236);
-    padding: 0.875em 1.5625em;
-    border-radius: 3.5em;
-    display: inline-block;
     color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: "Lucida Console", "Courier New", monospace;
-    }
+}
 
-footer{
+footer {
+	padding: 2rem;
     background: rgba(153, 204, 255, 0.3);
     background: linear-gradient(to bottom, rgba(62, 77, 92, 0.83), rgba(116, 169, 223, 0.64)), url("https://w0.peakpx.com/wallpaper/964/736/HD-wallpaper-piano-keys-macro.jpg")  no-repeat center fixed;
     background-size: cover;
-    border-radius: 3.5em; 
-
 }
 
-footer img {
+footer::after {
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+footer>aside a {
+    text-decoration: underline;
+}
+
+footer>aside img {
     height: auto;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
-    padding-top: 1.2em;
-    width: 5em;
-    float:left;
+    width: 7rem;
+    margin-right: 1rem;
 }
 
-footer>address#contact {
-    padding-top: 1.25em;
-    font-size: 1em;
+footer>section {
+	display: inline-block;
+}
+
+footer>section>address {
+    font: 1rem "Lucida Console", "Courier New", monospace;
     text-decoration: solid;
-    font-family: "Lucida Console", "Courier New", monospace;
-    color:aliceblue;
-    line-height: 3em;
-    margin-left: 1.5em;
-    margin-right: auto;
-    display:inline-block;
+    color: aliceblue;
+    line-height: 2rem;
 }
 
-footer>address#contact> a:hover, a:active{
+footer>section>address a:link, footer>section>address a:visited {
+	color: navy;
+	text-decoration: none;
+}
+
+footer>section>address a:hover, footer>section>address a:active {
     color: red;
     text-decoration: underline;
 }
 
-footer>a#stop {
-    font-size: 2em;
-    text-decoration: underline;
-    
-}
-
-footer ul{
-    display: table;  
-    margin: 0 auto;
-    min-width: 43.5em;
-    list-style: none;
-    padding-top: 1.25em;
-    font-size: 1.5em;
-    }
-
-footer ul li {
-    display: inline-block;
-    padding: 0.875em 1.5625em;
-    color:aliceblue;
-
-}
-
-h2.social {
-    color:aliceblue;
-    text-decoration: solid;
+footer>section>p {
+    color: aliceblue;
     font-family: "Lucida Console", "Courier New", monospace;
-    display:inline-block;
 }
 
-a#top{
+footer>section>ul {
+    display: inline-block;  
+    margin: 0 auto;
+    list-style: none;
+    padding-top: 1.25rem;
+}
+
+footer>section>ul li {
+    display: inline-block;
+    padding: 0 1.5rem;
+}
+
+footer>section>ul li img {
+	width: 3rem;
+}
+
+footer>a#top {
     text-decoration: none;
     display: inline-block;
-    margin-left: 55em;
+    margin-left: 55rem;
     margin-right: auto;
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
-
-h2 {
-    margin-left: 1.5em;
-    margin-right: 1.5em;
-    padding-top: 0.75em;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2.5em;
-}
-
-input:not([type="submit"], [type="reset"]){
-    border-width: 0.25em;
-    width: 100%;
-    padding: 0.75em 1.25em;
-    margin: 0.5em 0;
-    box-sizing: border-box;
-}
-
-fieldset#field1{
-    background-color: rgb(253, 229, 120);
-    padding: 0.75em 1.25em;
-    margin-bottom: 1.5em;
-}
-
-fieldset#field2{
-    background-color: rgb(253, 229, 120);
-    padding: 0.75em 1.25em;
-    margin-bottom: 1.5em;
-}
-
-input[type=button], input[type=submit], input[type=reset] {
-    background-color: #33bcdf;
-    border: none;
-    color: white;
-    padding: 1em 2em;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1em;
-    margin: 0.25em 0.125em;
-    cursor: pointer;
-    border-radius: 0.5em;
-}
-
 
