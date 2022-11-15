@@ -15,9 +15,9 @@ main {
 
 main>article>section {
 	margin: 2rem 0;
-	padding: 1.0rem;
+	padding: 1.2rem;
 	background-color: #FFFFFF;
-	border-radius: 40px;
+	border-radius: 30px;
 	box-shadow: 0px 0px 5px 2px gray;
 }
 
@@ -32,16 +32,11 @@ main>header>h2 {
 }
 
 img.product-preview {
-    padding: 1.5rem;
+    padding: 0 1.5rem 1.5rem 0;
     /* max-height: 20%;*/
-    max-width: 10rem;
+    width: 12rem;
+    height: auto;
     display: block;
-}
-
-img.product-cover {
-	width: 10rem;
-	height: auto;
-    padding: 0rem 1.5rem;
 }
 
 img.rating {
@@ -67,16 +62,10 @@ article>section>header {
 	display: block;
 }
 
-<<<<<<< HEAD
 article>section>header>strong {
 	font: bold 1.8rem 'Georgia', serif;
 }
-
 article>section>header>strong>a:link, article>section>header>strong>a:visited{
-=======
-a.book-title:link{
-    font-family: "Times New Roman", Times, serif;
->>>>>>> 0f2f73312660b2c3f2e23354dc94d831d81ec99f
     color: rgb(15, 21, 138);
     text-decoration: none;
 }
@@ -167,17 +156,19 @@ nav.details>ul {
 	display: table;   
 	margin: 0 auto;
 }
-nav.details>ul li{
-    margin-top: 0.725em;
-    font-size: 2em;
-    font-style: normal;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 3.5em;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    margin: 1.5em 1.5em 1.5em 1.5em;
+
+nav.details>ul>li {
+    margin: 1.5rem;
+    margin-top: 0.75rem;
+    padding: 1rem;
+    border-radius: 25px;
+    background-color: white;
     display: inline-block; 
+}
+
+nav.details>ul>li>a {
+    font: 2rem 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	text-decoration: none;
 }
 
 p.short-description {
@@ -196,16 +187,6 @@ span.product-code {
 
 span.price {
 	font: 3.5rem 'Times New Roman', serif;
-}
-
-img.product{
-    height: auto;
-    margin-left: 2.5em;
-    margin-right: auto;
-    padding-top: 1.2em;
-    padding-bottom: 3em;
-    width: 12em;
-    display:inline;
 }
 
 .container{
@@ -231,8 +212,7 @@ img.product{
 
 h3{
     text-decoration: solid;
-    font-family: "Lucida Console", "Courier New", monospace;
-    font-size: 2em;
+    font: 2rem "Lucida Console", "Courier New", monospace;
 }
 
 table, th, td {
