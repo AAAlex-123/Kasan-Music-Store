@@ -259,7 +259,6 @@ body>header h1 {
     display: block;
 }
 
-/*
 body>header>nav, header nav * {
 	display: block;
 }
@@ -292,45 +291,6 @@ body>header>nav a.test:hover, a.test:active {
     background-color: rgb(65, 168, 236);
     color: white;
 }
-*/
-
-/* --- */
-
-body>nav, header nav * {
-	display: block;
-}
-
-body>nav ul {
-    margin: 0 auto;
-    font-size: 1.2rem;
-}
-
-    body>nav ul li {
-        /* display: inline-block; */
-	    display: block;
-        padding: 0.5rem 0.7rem;
-    }
-
-    body>nav a {
-        text-decoration: none;
-        padding: 1rem 1.5rem;
-        border-radius: 3.5rem;
-        /* display: inline-block; */
-	    font-family: "Lucida Console", "Courier New", monospace;
-        background-color: rgb(208, 230, 245);
-    }
-
-    body>nav a.test:link, nav a.text:visited {
-        color: black;
-    }
-
-body>nav a.test:hover, a.test:active {
-    text-decoration: underline;
-    background-color: rgb(65, 168, 236);
-    color: white;
-}
-
-/* --- */
 
 footer {
 	padding: 2rem;
