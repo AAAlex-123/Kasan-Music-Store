@@ -225,7 +225,7 @@ aside.right {
 	float: right;
 }
 
-section::after {
+article>section::after {
 	content: " ";
 	display: block;
 	height: 0;
@@ -294,75 +294,72 @@ body>nav a:hover, body>nav a:active {
 
 footer {
 	padding: 2rem;
-    background: rgba(153, 204, 255, 0.3);
-    background: linear-gradient(to bottom, rgba(62, 77, 92, 0.83), rgba(116, 169, 223, 0.64)), url("https://w0.peakpx.com/wallpaper/964/736/HD-wallpaper-piano-keys-macro.jpg")  no-repeat center fixed;
-    background-size: cover;
+	display: flex;
+	flex-flow: row wrap;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+
+	background: linear-gradient(to bottom, rgba(62, 77, 92, 0.83), rgba(116, 169, 223, 0.64)), url("https://w0.peakpx.com/wallpaper/964/736/HD-wallpaper-piano-keys-macro.jpg")  no-repeat center fixed;
+	background-size: cover;
 }
 
-footer::after {
-	content: " ";
-	display: block;
-	height: 0;
-	clear: both;
-}
-
-footer>aside a {
-    text-decoration: underline;
-}
-
-footer>aside img {
-    height: auto;
-    width: 7rem;
-    margin-right: 1rem;
-}
-
-footer>section {
+footer>* {
+	margin: 0 1rem;
 	display: inline-block;
+
+	color: aliceblue;
+	font: 1rem "Lucida Console", "Courier New", monospace;
 }
 
-footer>section>address {
-    font: 1rem "Lucida Console", "Courier New", monospace;
-    text-decoration: solid;
-    color: aliceblue;
-    line-height: 2rem;
+footer>a>img {
+	height: auto;
+	width: 7rem;
 }
 
-footer>section>address a:link, footer>section>address a:visited {
+footer>address {
+	display: flex;
+	flex-flow: column nowrap;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+footer>address>p {
+	margin: 0.3rem 0;
+
+	font-style: italic;
+}
+
+footer>address a:link, footer>address a:visited {
 	color: navy;
 	text-decoration: none;
 }
 
-footer>section>address a:hover, footer>section>address a:active {
-    color: red;
-    text-decoration: underline;
+footer>address a:hover, footer>address a:active {
+	color: red;
+	text-decoration: underline;
+}
+
+footer>section {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-column-gap: 1rem;
+	justify-items: center;
+	align-items: center;
 }
 
 footer>section>p {
-    color: aliceblue;
-    font-family: "Lucida Console", "Courier New", monospace;
+	grid-row: 1;
+	grid-column: 1 / 5;
 }
 
-footer>section>ul {
-    display: inline-block;  
-    margin: 0 auto;
-    list-style: none;
-    padding-top: 1.25rem;
-}
-
-footer>section>ul li {
-    display: inline-block;
-    padding: 0 1.5rem;
-}
-
-footer>section>ul li img {
+footer>section>a>img {
 	width: 3rem;
 }
 
 footer>a#top {
-    text-decoration: none;
-    display: inline-block;
-    margin-left: 55rem;
-    margin-right: auto;
-    font-size: 1.5rem;
+	text-decoration: none;
+	font-size: 1.2rem;
 }
 
