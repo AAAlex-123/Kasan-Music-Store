@@ -7,10 +7,30 @@
 
 body {
 	background-color: rgb(202, 236, 244);
+    display: grid;
+    grid-template-rows: 250px auto;
+    grid-template-columns: 200px auto;
+    grid-gap: 1em;
+    align-items: start;
 }
+
+body>* {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
 
 main {
 	padding: 2.5rem;
+    grid-column: 2/4;
+    grid-row: 3/4;
+}
+
+nav{
+    grid-row: 2 / 4;
+    grid-column: 1 / 2;
+    margin-top: 5em;
 }
 
 main>article>section {
@@ -234,6 +254,8 @@ section::after {
 
 body>header {
     background-image: linear-gradient(to bottom right, rgb(57, 126, 196), rgb(153, 204, 255));
+    grid-column: 1/4;
+    grid-row: 1/2;
 }
 
 body>header::after {
@@ -259,9 +281,9 @@ body>header h1 {
     display: block;
 }
 
-body>nav, header nav * {
+/*body>nav, header nav * {
 	display: block;
-}
+}*/
 
 body>nav ul {
     margin: 0 auto;
@@ -297,6 +319,8 @@ footer {
     background: rgba(153, 204, 255, 0.3);
     background: linear-gradient(to bottom, rgba(62, 77, 92, 0.83), rgba(116, 169, 223, 0.64)), url("https://w0.peakpx.com/wallpaper/964/736/HD-wallpaper-piano-keys-macro.jpg")  no-repeat center fixed;
     background-size: cover;
+    grid-column: 1/4;
+    grid-row: 4/5;
 }
 
 footer::after {
