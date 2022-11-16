@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<xinclude path="./shared_elements/head.html"/>
+	<body id="top">
+		<xinclude path="./shared_elements/header.html"/>
+		<main>
+			<header>
+				<h2>Tech Support Form</h2>
+			</header>
+			<a class="return" href="index.html">Back to Home</a>
+			<article>
+				<section>
+					<form>
+						<fieldset id="field1">
+							<legend>
+								Customer Information
+							</legend>
+							<label for="first_name">
+								First Name
+							</label>
+							<input id="first_name" name="first_name" placeholder="John" required="" type="text">
+							<label for="last_name">
+								Last Name
+							</label>
+							<input id="last_name" name="last_name" placeholder="Smith" required="" type="text">
+							<label for="email">
+								Email
+							</label>
+							<input id="email" name="email" placeholder="johnsmith@company.com" required="" type="email">
+							<label for="telephone_number">
+								Telephone Number
+							</label>
+							<input id="telephone_number" name="telephone_number" placeholder="6912345678" required="" type="tel">
+						</fieldset>
+						<fieldset id="field2">
+							<legend>
+								Product Information
+							</legend>
+							<label for="prod_code">
+								Product Code
+							</label>
+							<input id="prod_code" name="product_code" pattern="[0-9]{3}[A-Z]{3}" placeholder="123ABC" required="" title="3 digits followed by 3 capital letters" type="text">
+							<label for="purchase_date">
+								Purchase Date
+							</label>
+							<input id="purchase_date" name="purchase_date" required="" type="date">
+							<label for="receipt">
+								Receipt
+							</label>
+							<input accept="pdf" id="receipt" name="receipt" required="" type="file">
+							<label for="problem">
+								Product Description
+							</label>
+							<input id="problem" name="problem" required="" type="text">
+						</fieldset>
+						<input id="btn_submit" name="Submit" type="submit">
+						<input id="btn_reset" name="Reset" type="reset">
+					</form>
+				</section>
+			</article>
+		</main>
+		<xinclude path="./shared_elements/footer.html"/>
+	</body>
+</html>
