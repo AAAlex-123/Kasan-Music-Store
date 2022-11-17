@@ -9,7 +9,7 @@ body {
 	background-color: rgb(202, 236, 244);
     display: grid;
     grid-template-rows: repeat(3, auto);
-    grid-template-columns: 2fr 7fr 2fr;
+    grid-template-columns: 2fr 7fr;
     grid-gap: 1rem;
     align-items: start;
 }
@@ -309,20 +309,15 @@ body>header>h1 {
 
 body>nav {
 	padding: 1rem;
-
 	grid-row: 2;
 	grid-column: 1;
-}
-
-body>nav ul {
-    margin: 0 auto;
+	display:flex;
+	flex-direction: column;
+	margin: 0 auto;
     font-size: 1.2rem;
-}
+	align-items: flex-start;
 
-    body>nav ul li {
-        display: inline-block;
-        padding: 0.5rem 0.7rem;
-    }
+}
 
     body>nav a {
         text-decoration: none;
@@ -331,6 +326,8 @@ body>nav ul {
         display: inline-block;
 	    font-family: "Lucida Console", "Courier New", monospace;
         background-color: rgb(208, 230, 245);
+		margin: 1em;
+		white-space: nowrap;
     }
 
     body>nav a:link, body>nav a:visited {
