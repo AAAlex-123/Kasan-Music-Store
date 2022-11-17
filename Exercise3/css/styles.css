@@ -14,15 +14,14 @@ body {
     align-items: start;
 }
 
-body>* {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
+body>main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1rem;
+	padding: 1rem;
 
-
-main {
-	padding: 2.5rem;
     grid-column: 2/4;
     grid-row: 3/4;
 }
@@ -41,7 +40,6 @@ main>article>section {
 }
 
 main>header>h2 {
-    margin: 1rem 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2.5rem;
 }
