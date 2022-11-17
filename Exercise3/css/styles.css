@@ -34,7 +34,6 @@ nav{
 }
 
 main>article>section {
-	margin: 2rem 0;
 	padding: 1.2rem;
 	background-color: #FFFFFF;
 	border-radius: 30px;
@@ -83,19 +82,31 @@ img.type-image {
     object-fit: cover;
 }
 
-article>section>header {
+body>main>article {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.5rem
+}
+
+body>main>article.single-product,
+body>main>article#tech-support {
+	grid-template-columns: repeat(1, 1fr);
+}
+
+body>main>article>section>header {
 	display: block;
 }
 
-article>section>header>strong {
+body>main>article>section>header>strong {
 	font: bold 1.8rem 'Georgia', serif;
 }
-article>section>header>strong>a:link, article>section>header>strong>a:visited{
+
+body>main>article>section>header>strong>a:link, body>main>article>section>header>strong>a:visited{
     color: rgb(15, 21, 138);
     text-decoration: none;
 }
 
-article>section>header>strong>a:hover {
+body>main>article>section>header>strong>a:hover {
     color:rgb(128, 40, 6);
     text-decoration: underline;
 }
