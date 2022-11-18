@@ -80,6 +80,11 @@ body>main>article {
 	gap: 1.5rem
 }
 
+/* https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html */
+body>main>article.single-product>section {
+	scroll-margin-top: 7rem;
+}
+
 body>main>article.single-product,
 body>main>article#tech-support {
 	grid-template-columns: repeat(1, 1fr);
@@ -180,24 +185,33 @@ details ul.product-list:first-child {
     margin-top: 0rem;
 }
 
-nav.details>ul {
-	display: table;   
-	margin: 0 auto;
+/* ---------------------------------- */
+/* --- ARTICLE.SINGLE-PRODUCT>NAV --- */
+/* ---------------------------------- */
+
+body>main>article.single-product>nav {
+	padding: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+
+	background-color: white;
+	box-shadow: 0px 0px 5px 2px gray;
+
+	position: sticky;
+	top: 0rem;
 }
 
-nav.details>ul>li {
-    margin: 1.5rem;
-    margin-top: 0.75rem;
-    padding: 1rem;
-    border-radius: 25px;
-    background-color: white;
-    display: inline-block; 
+body>main>article.single-product>nav>a {
+	padding: 1rem;
+	border-radius: 25px;
+	background-color: rgb(202, 236, 244);
 }
 
-/* TODO: fix visited color */
-nav.details>ul>li>a, nav.details>ul>li>a:visited {
-	color: #00E;
-    font: 2rem 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+body>main>article.single-product>nav>a:link,
+body>main>article.single-product>nav>a:visited {
+	color: #0000EE;
+	font: 2rem 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	text-decoration: none;
 }
 
