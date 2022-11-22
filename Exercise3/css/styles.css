@@ -1,8 +1,26 @@
+@font-face {
+	font-family: font-kasan;
+	src: url("../font/Chicago.otf");
+}
+
+@font-face {
+	font-family: font-h2;
+	src: url("../font/Blenda Script.otf");
+}
+
+@font-face {
+	font-family: font-index;
+	src: url("../font/Letters for Learners.ttf");
+}
+
+@font-face {
+	font-family: font-a;
+	src: url("../font/Courier Prime.ttf");
+}
 
 * {
 	margin: 0;
 	padding: 0;
-	/* border: 2px solid green; */
 }
 
 body {
@@ -12,6 +30,10 @@ body {
     grid-template-columns: 2fr 7fr;
     grid-gap: 1rem;
     align-items: start;
+}
+
+a {
+	font-family: font-a;
 }
 
 body>main {
@@ -41,7 +63,7 @@ main>article>section {
 }
 
 main>header>h2 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: font-h2;
     font-size: 2.5rem;
 }
 
@@ -65,7 +87,7 @@ body>main>article>section>header {
 	display: block;
 }
 
-body>main>article>section>header>strong {
+body>main>article>section>header>strong>* {
 	font: bold 1.8rem 'Georgia', serif;
 }
 
@@ -106,22 +128,22 @@ body>main>article.single-product>nav>a {
 body>main>article.single-product>nav>a:link,
 body>main>article.single-product>nav>a:visited {
 	color: #0000EE;
-	font: 2rem 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 2rem;
 	text-decoration: none;
 }
 
 body>main>article.single-product>section>header>h3 {
 	padding-bottom: 1rem;
-    text-decoration: solid;
-    font: 2rem "Lucida Console", "Courier New", monospace;
+	text-decoration: solid;
+	font: 2rem "Lucida Console", "Courier New", monospace;
 }
 
 table, th, td {
-    border: 1px solid;
-    vertical-align: middle;
-    font-size: 1rem;
-    margin: 2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	border: 1px solid;
+	vertical-align: middle;
+	font-size: 1rem;
+	margin: 2rem;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 thead {
@@ -183,7 +205,7 @@ body>header>a>img {
 body>header>h1 {
 	justify-self: center;
 
-	font: bold 3rem "Times New Roman", serif;
+	font: bold 3.5rem font-kasan;
 	background: -webkit-linear-gradient(rgb(201, 137, 42), rgb(8, 1, 20));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -234,7 +256,7 @@ body>nav>a:hover, body>nav>a:active {
 
 a.return {
 	padding: 0.5rem;
-	font: 1rem  Arial, Helvetica, sans-serif;
+	font-size: 1rem;
 
 	border-radius: 5px;
 	background-color: rgb(250, 187, 166);
