@@ -92,14 +92,14 @@ body>main>article>section>header>strong>* {
 }
 
 body>main>article>section>header>strong>a:link,
-body>main>article>section>header>strong>a:visited{
-    color: rgb(15, 21, 138);
-    text-decoration: none;
+body>main>article>section>header>strong>a:visited {
+	color: rgb(15, 21, 138);
+	text-decoration: none;
 }
 
 body>main>article>section>header>strong>a:hover {
-    color:rgb(128, 40, 6);
-    text-decoration: underline;
+	color:rgb(128, 40, 6);
+	text-decoration: underline;
 }
 
 /* ---------------------------------- *
@@ -173,9 +173,6 @@ article>section::after {
 	display: block;
 	height: 0;
 	clear: both;
-	margin: 3em;
-	font-size: 0.75em;
-    font-family: sans-serif;
 }
 
 
