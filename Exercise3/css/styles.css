@@ -232,10 +232,25 @@ span.price {
 h3{
     text-decoration: solid;
     font: 2rem "Lucida Console", "Courier New", monospace;
+	padding-bottom: 1em;
 }
 
 table, th, td {
     border: 1px solid;
+	vertical-align: middle;
+	font-size: 1em;
+	margin: 2em;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+td{
+	padding: 1em;
+	text-align: center;
+}
+
+thead{
+	font-size: 1.25em;
 }
 
 /* TODO: replace this hacky code on Exercise3 */
@@ -253,7 +268,11 @@ article>section::after {
 	display: block;
 	height: 0;
 	clear: both;
+	margin: 3em;
+	font-size: 0.75em;
+    font-family: sans-serif;
 }
+
 
 /* ------------------- *
  * --- BODY>HEADER --- *
