@@ -1,3 +1,9 @@
+/* ---------------------------------- *
+ * ------------@font-face-------------*
+ * ---------------------------------- */
+
+
+/*We have imported a couple of fonts that we downloaded online and applied them to different parts of the code*/
 @font-face {
 	font-family: font-kasan;
 	src: url("../font/Chicago.otf");
@@ -18,19 +24,16 @@
 	src: url("../font/Courier Prime.ttf");
 }
 
+/*General positioning for what hasn't overwritten it yet*/
 * {
 	margin: 0;
 	padding: 0;
 }
 
-body {
-	background-color: rgb(202, 236, 244);
-	display: grid;
-	grid-gap: 1rem;
-	align-items: start;
-
-	min-width: 500px;
-}
+/*I'm too tired pls help why is there 600 lines of code anyway this is where we have the different settings for phones/tablets/pcs*/
+/* ---------------------------------- *
+ * -----------@media-screen------------*
+ * ---------------------------------- */
 
 @media screen {
 	body {
@@ -108,6 +111,16 @@ body {
 	}
 }
 
+
+body {
+	background-color: rgb(202, 236, 244);
+	display: grid;
+	grid-gap: 1rem;
+	align-items: start;
+
+	min-width: 500px;
+}
+
 a {
 	font-family: font-a;
 }
@@ -145,16 +158,6 @@ body>main>article>section {
 	box-shadow: 0px 0px 5px 2px gray;
 }
 
-/* https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html */
-body>main>article.single-product>section {
-	scroll-margin-top: 7rem;
-}
-
-body>main>article.single-product,
-body>main>article#tech-support {
-	grid-template-columns: repeat(1, 1fr);
-}
-
 body>main>article>section>header {
 	display: block;
 }
@@ -173,6 +176,23 @@ body>main>article>section>header>strong>a:hover {
 	color:rgb(128, 40, 6);
 	text-decoration: underline;
 }
+
+
+/* ---------------------------------- *
+ * --- ARTICLE.SINGLE-PRODUCT> --- *
+ * ---------------------------------- */
+
+/* https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html */
+body>main>article.single-product>section {
+	scroll-margin-top: 7rem;
+}
+
+body>main>article.single-product,
+body>main>article#tech-support {
+	grid-template-columns: repeat(1, 1fr);
+}
+
+
 
 /* ---------------------------------- *
  * --- ARTICLE.SINGLE-PRODUCT>NAV --- *
@@ -231,6 +251,8 @@ td {
  * --- ASIDE --- *
  * ------------- */
 
+
+/*Oh look at this code we definitely didn't get from stack overflow :)*/
 /* https://stackoverflow.com/questions/218760/how-do-you-keep-parents-of-floated-elements-from-collapsing */
 aside.left {
 	float: left;
@@ -252,26 +274,26 @@ article>section::after {
  * --- BODY>HEADER --- *
  * ------------------- */
 
+/*The header is a grid of 1 row and 2 columns and its background is a gradient image*/
 body>header {
 	display: grid;
 	grid-gap: 1rem;
 	align-items: center;
 	justify-items: center;
-
 	padding: 1rem;
-
 	background-image: linear-gradient(to bottom right, rgb(57, 126, 196), rgb(153, 204, 255));
 }
 
+/*Only one image in header*/
 body>header>a>img {
 	margin: 1rem;
 	width: 15rem;
 	height: auto;
 }
 
+/*The font of the header is in a gradient*/
 body>header>h1 {
 	justify-self: center;
-
 	font: bold 3.5rem font-kasan;
 	background: -webkit-linear-gradient(rgb(201, 137, 42), rgb(8, 1, 20));
 	-webkit-background-clip: text;
@@ -316,10 +338,11 @@ body>nav>a:hover, body>nav>a:active {
  * --- A, P, SPAN --- *
  * ------------------ */
 
+
+/*The return class has been made to have separate code for the return buttons*/
 a.return {
 	padding: 0.5rem;
 	font-size: 1rem;
-
 	border-radius: 5px;
 	background-color: rgb(250, 187, 166);
 	text-decoration: none;
@@ -329,6 +352,7 @@ a.return::before {
 	content: '<';
 }
 
+/*Each item description (short and extended) have different decoration, same with the product code and price. Having them in different classes makes it easier to have variety in code.*/
 p.short-description {
 	font: 1.5rem 'Times New Roman', serif;
 }
@@ -348,6 +372,7 @@ span.price {
 	font: 3.5rem 'Times New Roman', serif;
 }
 
+/*The reviews are in their own flexbox to have them one under the other*/
 section#reviews article {
 	display: flex;
 	flex-direction: column;
@@ -358,6 +383,8 @@ section#reviews article {
  * --- IMG --- *
  * ----------- */
 
+
+/*For now, this is where we edit an image's position and scale*/
 img.product-preview {
 	padding: 0 1.5rem 1.5rem 0;
 	max-width: 9rem;
@@ -413,6 +440,7 @@ details>ul {
  * --- FORM --- *
  * ------------ */
 
+/*The form is inside a box of orange color with gray shadow*/
 form {
 	padding: 1.5rem;
 	border-radius: 30px;
@@ -420,12 +448,14 @@ form {
 	background-color: rgb(250, 187, 116);
 }
 
+/*Additionally, the fieldset inside the form has yellow background*/
 form>fieldset {
 	margin-bottom: 1.5rem;
 	padding: 0.75rem 1.25rem;
 	background-color: rgb(253, 229, 120);
 }
 
+/*Different fonts and colors for legend and label*/
 form legend {
 	font: bold 1.5rem Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	color: rgb(47, 51, 54);
@@ -440,6 +470,7 @@ form input {
 	display: block;
 }
 
+/*All this code adjusts the position and size of the fieldsets*/
 form>fieldset>input {
 	margin-top: 0.3rem;
 	margin-bottom: 1rem;
@@ -449,16 +480,18 @@ form>fieldset>input {
 	box-sizing: border-box;
 }
 
+/*Form changes color when we click on it to write*/
 form>fieldset>input:focus {
 	background-color: rgb(202, 236, 244);
 }
 
-
+/*Flexbox so that the buttons are next to each other in a row*/
 form>div {
 	display: flex;
 	justify-content: space-evenly;
 }
 
+/*Button customization*/
 form input[type=submit],
 form input[type=reset] {
 	padding: 1rem 2rem;
@@ -478,29 +511,35 @@ form input[type=reset] {
  * -------------- */
 
 footer {
+	/* The footer is in its own flex box in a row wrap*/
 	padding: 2.5rem;
 	display: flex;
 	flex-flow: row wrap;
 	gap: 1rem;
 	align-items: center;
 	justify-content: space-between;
-
+	/* This code is used to add a lower opacity image that covers the entire footer and is on a fixed position*/
 	background: linear-gradient(to bottom, rgba(62, 77, 92, 0.83), rgba(116, 169, 223, 0.64)), url("https://w0.peakpx.com/wallpaper/964/736/HD-wallpaper-piano-keys-macro.jpg")  no-repeat center fixed;
 	background-size: cover;
 }
 
-footer>* {
-	display: inline-block;
 
+
+footer>* {
+	/*I'm not sure if this line does anything*/
+	display: inline-block;
+	/* The standard color and font for the entire footer*/
 	color: aliceblue;
 	font: 1rem "Lucida Console", "Courier New", monospace;
 }
 
+/*Positioning and sizing of the logo*/
 footer>a>img {
 	height: auto;
 	width: 7rem;
 }
 
+/*The address is also self-contained in its own flexbox so that all the lines can be under one another*/
 footer>address {
 	display: flex;
 	flex-flow: column nowrap;
@@ -508,12 +547,13 @@ footer>address {
 	align-items: flex-start;
 }
 
+/*Margin and font between lines of the address*/
 footer>address>p {
 	margin: 0.3rem 0;
-
 	font-style: italic;
 }
 
+/*Specific code for the links when they're visited and active, the color changes to red when the user hovers over it*/
 footer>address a:link, footer>address a:visited {
 	color: navy;
 	text-decoration: none;
@@ -524,6 +564,7 @@ footer>address a:hover, footer>address a:active {
 	text-decoration: underline;
 }
 
+/*The social media icons are all placed in a grid of 2 rows (1st row is the text, 2nd is the icons, and 4 columns for all the icons to be put in)*/
 footer>section {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -542,6 +583,7 @@ footer>section>a>img {
 	width: 3rem;
 }
 
+/*This id is used exclusively to link us back to the top of a page*/
 footer>a#top {
 	text-decoration: none;
 	font-size: 1.2rem;
