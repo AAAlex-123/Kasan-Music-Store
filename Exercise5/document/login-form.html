@@ -12,7 +12,7 @@
 			<article id="tech-support">
 				<section>
 					<form>
-						<fieldset id="field1">
+						<fieldset>
 							<legend>
 								User Information
 							</legend>
@@ -24,7 +24,7 @@
 								Email
 							</label>
 							<input id="email" name="email" placeholder="johnsmith@company.com" required="" type="email">
-                            <label for="address">
+							<label for="address">
 								Living Address
 							</label>
 							<input id="address" name="address" placeholder="Jon Doe Str. 7" required="" type="text">
@@ -32,32 +32,90 @@
 								Telephone Number
 							</label>
 							<input id="telephone_number" name="telephone_number" placeholder="6912345678" required="" type="tel">
-                            <label for="birth_date">
+							<label for="birth_date">
 								Birth Date
 							</label>
 							<input id="birth_date" name="birth_date" required="" type="date">
 						</fieldset>
-                        <fieldset id="field2">
+						<fieldset>
 							<legend>
 								Shipping And Payment Information
 							</legend>
-                            <label for="payment_method"> Payment Method</label>
-                            <select id="payment_method" name="payment">
-                                <optgroup label="Pay On Delivery">
-                                    <option value="cash"> Pay On Delivery </option>
-                                </optgroup>
-                                <optgroup label="Bank Order">
-                                    <option value="credit"> Credit Card </option>
-                                    <option value="deposit"> Deposit In Account </option>
-                                </optgroup>
-                                <optgroup label="Other Ways">
-                                    <option value="Paypal"> Paypal </option>
-                                </optgroup>
-                            </select>
-                            <label for="s_address">
+							<label for="payment_method"> Payment Method</label>
+							<select id="payment_method" name="payment">
+								<optgroup label="Pay On Delivery">
+									<option value="cash"> Pay On Delivery </option>
+								</optgroup>
+								<optgroup label="Bank Order">
+									<option value="credit"> Credit Card </option>
+									<option value="deposit"> Deposit In Account </option>
+								</optgroup>
+								<optgroup label="Other Ways">
+									<option value="Paypal"> Paypal </option>
+								</optgroup>
+							</select>
+							<label for="s_address">
 								Shipping Address
 							</label>
 							<input id="s_address" name="s_address" placeholder="Jon Doe Str. 7" required="" type="text">
+						</fieldset>
+						<fieldset>
+							<legend>User Authentication</legend>
+							<label for="username">Username</label>
+							<input type="text" id="username" name="purchase_frequency" value="username"/>
+							<label for="password">Password</label>
+							<input type="password" id="password" name="purchase_frequency" value="password"/>
+						</fieldset>
+						<fieldset>
+							<legend>Communication Options</legend>
+							<!--
+							<label for="select_communication_method">
+								Communication Options
+							</label>
+							-->
+							<select id="communication">
+								<option value="sms">SMS</option>
+								<option value="email">E-Mail</option>
+								<option value="viber">Viber</option>
+								<option value="whatsapp">WhatsApp</option>
+							</select>
+						</fieldset>
+						<fieldset>
+							<legend>User Feedback</legend>
+							<fieldset>
+								<legend>Purchase Frequency</legend>
+								<label for="a">A</label>
+								<input type="radio" id="a" name="A" value="a"/>
+								<label for="a">A</label>
+								<input type="radio" id="a" name="A" value="a"/>
+								<label for="a">A</label>
+								<input type="radio" id="a" name="A" value="a"/>
+							</fieldset>
+							<fieldset>
+								<legend>Most Frequent Purchase Method</legend>
+								<label for="cash">Cash</label>
+								<input type="radio" id="cash" name="payment_method" value="cash"/>
+								<label for="credit">Credit</label>
+								<input type="radio" id="credit" name="payment_method" value="credit"/>
+								<label for="paypal">Paypal</label>
+								<input type="radio" id="paypal" name="payment_method" value="paypal"/>
+							</fieldset>
+							<fieldset>
+								<legend>Most Frequently Bought Product Categories</legend>
+								<label for="partiture-books">Partiture Books</label>
+								<input type="checkbox" id="partiture-books" name="purchase_frequency" value="partiture-books"/>
+								<label for="music-instruments">Music Instruments</label>
+								<input type="checkbox" id="music-instruments" name="purchase_frequency" value="music-instruments"/>
+								<label for="dj-equipment">DJ Equipment</label>
+								<input type="checkbox" id="dj-equipment" name="purchase_frequency" value="dj-equipment"/>
+								<label for="professional-sound-image">Professional Sound/Image</label>
+								<input type="checkbox" id="professional-sound-image" name="purchase_frequency" value="professional-sound-image"/>
+							</fieldset>
+							<fieldset>
+								<legend>Overall Satisfaction</legend>
+								<label for="satisfaction">Satisfaction</label>
+								<input type="range" id="satisfaction" name="purchase_frequency" value="satisfaction" min="1" max="5"/>
+							</fieldset>
 						</fieldset>
 						<div>
 							<input id="btn_submit" name="Submit" type="submit">
