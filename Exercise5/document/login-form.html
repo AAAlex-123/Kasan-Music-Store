@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<xinclude path="./shared_elements/head.html"/>
+	<body id="top">
+		<xinclude path="./shared_elements/header.html"/>
+		<xinclude path="./shared_elements/nav.html"/>
+		<main>
+			<header>
+				<h2>Login Form</h2>
+			</header>
+			<a class="return" href="index.html">Back to Home</a>
+			<article id="tech-support">
+				<section>
+					<form>
+						<fieldset id="field1">
+							<legend>
+								User Information
+							</legend>
+							<label for="full_name">
+								Full Name
+							</label>
+							<input id="full_name" name="full_name" placeholder="John Smith" required="" type="text">
+							<label for="email">
+								Email
+							</label>
+							<input id="email" name="email" placeholder="johnsmith@company.com" required="" type="email">
+                            <label for="address">
+								Living Address
+							</label>
+							<input id="address" name="address" placeholder="Jon Doe Str. 7" required="" type="text">
+							<label for="telephone_number">
+								Telephone Number
+							</label>
+							<input id="telephone_number" name="telephone_number" placeholder="6912345678" required="" type="tel">
+                            <label for="birth_date">
+								Birth Date
+							</label>
+							<input id="birth_date" name="birth_date" required="" type="date">
+						</fieldset>
+                        <fieldset id="field2">
+							<legend>
+								Shipping And Payment Information
+							</legend>
+                            <label for="payment_method"> Payment Method</label>
+                            <select id="payment_method" name="payment">
+                                <optgroup label="Pay On Delivery">
+                                    <option value="cash"> Pay On Delivery </option>
+                                </optgroup>
+                                <optgroup label="Bank Order">
+                                    <option value="credit"> Credit Card </option>
+                                    <option value="deposit"> Deposit In Account </option>
+                                </optgroup>
+                                <optgroup label="Other Ways">
+                                    <option value="Paypal"> Paypal </option>
+                                </optgroup>
+                            </select>
+                            <label for="s_address">
+								Shipping Address
+							</label>
+							<input id="s_address" name="s_address" placeholder="Jon Doe Str. 7" required="" type="text">
+						</fieldset>
+						<div>
+							<input id="btn_submit" name="Submit" type="submit">
+							<input id="btn_reset" name="Reset" type="reset">
+						</div>
+					</form>
+				</section>
+			</article>
+		</main>
+		<xinclude path="./shared_elements/footer.html"/>
+	</body>
+</html>
