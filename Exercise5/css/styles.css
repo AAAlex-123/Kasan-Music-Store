@@ -440,7 +440,7 @@ details>ul {
  * --- FORM --- *
  * ------------ */
 
-/*The form is inside a box of orange color with gray shadow*/
+/* The form is inside a box of orange color with gray shadow */
 form {
 	padding: 1.5rem;
 	border-radius: 30px;
@@ -448,30 +448,28 @@ form {
 	background-color: rgb(250, 187, 116);
 }
 
-/*Additionally, the fieldset inside the form has yellow background*/
-form>fieldset {
+/* Additionally, each fieldset has yellow background */
+form fieldset {
 	margin-bottom: 1.5rem;
 	padding: 0.75rem 1.25rem;
 	background-color: rgb(253, 229, 120);
 }
 
-/*Different fonts and colors for legend and label*/
+/* Font for legend elements */
 form legend {
 	font: bold 1.5rem Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	color: rgb(47, 51, 54);
 }
 
-form label, form input {
+/* Font for label and input elements */
+form label, form input, form select {
 	font: bold 0.75rem Verdana, Geneva, Tahoma, sans-serif;
 	color: rgb(47, 51, 54);
 }
 
-form input {
+/* Display all form elements one below the other and adjust their margin/padding */
+form input, form select {
 	display: block;
-}
-
-/*All this code adjusts the position and size of the fieldsets*/
-form>fieldset>input {
 	margin-top: 0.3rem;
 	margin-bottom: 1rem;
 	padding: 0.75rem 1.25rem;
@@ -480,18 +478,19 @@ form>fieldset>input {
 	box-sizing: border-box;
 }
 
-/*Form changes color when we click on it to write*/
-form>fieldset>input:focus {
+/* Form changes color when we click on it to write */
+form input:focus, form select:focus {
 	background-color: rgb(202, 236, 244);
 }
 
-/*Flexbox so that the buttons are next to each other in a row*/
-form>div {
+/* Flexbox so that the buttons are next to each other in a row */
+form div {
 	display: flex;
+	gap: 2rem;
 	justify-content: space-evenly;
 }
 
-/*Button customization*/
+/* Button customization */
 form input[type=submit],
 form input[type=reset] {
 	padding: 1rem 2rem;
@@ -504,6 +503,22 @@ form input[type=reset] {
 	text-decoration: none;
 	font-size: 1rem;
 	cursor: pointer;
+	max-width: 10rem;
+}
+
+/* https://stackoverflow.com/questions/43115822/can-i-make-a-css-grid-with-dynamic-number-of-rows-or-columns#comment-79116141 */
+form fieldset fieldset {
+	display: grid;
+	grid-template-rows: repeat(auto-fill, 1rem);
+	grid-template-columns: auto auto;
+	gap: 1rem;
+	justify-content: start;
+}
+
+form fieldset fieldset input, form fieldset fieldset select {
+	margin: 0;
+	padding: 0;
+	width: fit-content;
 }
 
 /* -------------- *

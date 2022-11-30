@@ -13,67 +13,46 @@
 				<section>
 					<form>
 						<fieldset>
-							<legend>
-								User Information
-							</legend>
-							<label for="full_name">
-								Full Name
-							</label>
-							<input id="full_name" name="full_name" placeholder="John Smith" required="" type="text">
-							<label for="email">
-								Email
-							</label>
-							<input id="email" name="email" placeholder="johnsmith@company.com" required="" type="email">
-							<label for="address">
-								Living Address
-							</label>
-							<input id="address" name="address" placeholder="Jon Doe Str. 7" required="" type="text">
-							<label for="telephone_number">
-								Telephone Number
-							</label>
-							<input id="telephone_number" name="telephone_number" placeholder="6912345678" required="" type="tel">
-							<label for="birth_date">
-								Birth Date
-							</label>
-							<input id="birth_date" name="birth_date" required="" type="date">
+							<legend> User Information </legend>
+							<label for="full_name">Full Name</label>
+							<input id="full_name" name="full_name" placeholder="John Smith" required type="text">
+							<label for="email">Email</label>
+							<input id="email" name="email" placeholder="johnsmith@company.com" required type="email">
+							<label for="address">Residence Address</label>
+							<input id="address" name="address" placeholder="Jon Doe Str. 7" required type="text">
+							<label for="telephone_number">Telephone Number</label>
+							<input id="telephone_number" name="telephone_number" required placeholder="6912345678" required type="tel">
+							<label for="birth_date">Date of Birth</label>
+							<input id="birth_date" name="birth_date" required type="date">
 						</fieldset>
 						<fieldset>
-							<legend>
-								Shipping And Payment Information
-							</legend>
-							<label for="payment_method"> Payment Method</label>
-							<select id="payment_method" name="payment">
+							<legend>Shipping And Payment Information</legend>
+							<label for="payment_method">Payment Method</label>
+							<select id="payment_method" name="payment" required>
 								<optgroup label="Pay On Delivery">
-									<option value="cash"> Pay On Delivery </option>
+									<option value="cash">Pay On Delivery</option>
 								</optgroup>
 								<optgroup label="Bank Order">
-									<option value="credit"> Credit Card </option>
-									<option value="deposit"> Deposit In Account </option>
+									<option value="credit">Credit Card</option>
+									<option value="deposit">Deposit In Account</option>
 								</optgroup>
 								<optgroup label="Other Ways">
-									<option value="Paypal"> Paypal </option>
+									<option value="Paypal">Paypal</option>
 								</optgroup>
 							</select>
-							<label for="s_address">
-								Shipping Address
-							</label>
-							<input id="s_address" name="s_address" placeholder="Jon Doe Str. 7" required="" type="text">
+							<label for="shipping_address">Shipping Address</label>
+							<input id="shipping_address" name="shipping_address" placeholder="Jon Doe Str. 7" required type="text">
 						</fieldset>
 						<fieldset>
 							<legend>User Authentication</legend>
 							<label for="username">Username</label>
-							<input type="text" id="username" name="purchase_frequency" value="username"/>
+							<input type="text" id="username" name="purchase_frequency" required placeholder="username"/>
 							<label for="password">Password</label>
-							<input type="password" id="password" name="purchase_frequency" value="password"/>
+							<input type="password" id="password" name="purchase_frequency" required placeholder="password"/>
 						</fieldset>
 						<fieldset>
 							<legend>Communication Options</legend>
-							<!--
-							<label for="select_communication_method">
-								Communication Options
-							</label>
-							-->
-							<select id="communication">
+							<select id="communication" name="communication" required>
 								<option value="sms">SMS</option>
 								<option value="email">E-Mail</option>
 								<option value="viber">Viber</option>
@@ -84,37 +63,51 @@
 							<legend>User Feedback</legend>
 							<fieldset>
 								<legend>Purchase Frequency</legend>
-								<label for="a">A</label>
-								<input type="radio" id="a" name="A" value="a"/>
-								<label for="a">A</label>
-								<input type="radio" id="a" name="A" value="a"/>
-								<label for="a">A</label>
-								<input type="radio" id="a" name="A" value="a"/>
+								<input type="radio" id="daily" name="purchace-freq" value="daily" required checked/>
+								<label for="daily">Daily</label>
+								<input type="radio" id="weekly" name="purchace-freq" value="weekly" required/>
+								<label for="weekly">Weekly</label>
+								<input type="radio" id="monthly" name="purchace-freq" value="monthly" required/>
+								<label for="monthly">Montly</label>
+								<input type="radio" id="yearly-or-less" name="purchace-freq" value="yearly-or-less" required/>
+								<label for="yearly-or-less">Yearly or less frequently</label>
 							</fieldset>
 							<fieldset>
-								<legend>Most Frequent Purchase Method</legend>
+								<legend>Most Frequent Payment Method</legend>
+								<input type="radio" id="cash" name="most_freq_payment_method" value="cash" required checked/>
 								<label for="cash">Cash</label>
-								<input type="radio" id="cash" name="payment_method" value="cash"/>
+								<input type="radio" id="credit" name="most_freq_payment_method" value="credit" required/>
 								<label for="credit">Credit</label>
-								<input type="radio" id="credit" name="payment_method" value="credit"/>
+								<input type="radio" id="paypal" name="most_freq_payment_method" value="paypal" required/>
 								<label for="paypal">Paypal</label>
-								<input type="radio" id="paypal" name="payment_method" value="paypal"/>
 							</fieldset>
 							<fieldset>
-								<legend>Most Frequently Bought Product Categories</legend>
+								<legend>Most Frequently Bought Products</legend>
+								<input type="checkbox" id="partiture-books" name="most_freq_category" value="partiture-books"/>
 								<label for="partiture-books">Partiture Books</label>
-								<input type="checkbox" id="partiture-books" name="purchase_frequency" value="partiture-books"/>
+								<input type="checkbox" id="music-instruments" name="most_freq_category" value="music-instruments"/>
 								<label for="music-instruments">Music Instruments</label>
-								<input type="checkbox" id="music-instruments" name="purchase_frequency" value="music-instruments"/>
+								<input type="checkbox" id="dj-equipment" name="most_freq_category" value="dj-equipment"/>
 								<label for="dj-equipment">DJ Equipment</label>
-								<input type="checkbox" id="dj-equipment" name="purchase_frequency" value="dj-equipment"/>
+								<input type="checkbox" id="professional-sound-image" name="most_freq_category" value="professional-sound-image"/>
 								<label for="professional-sound-image">Professional Sound/Image</label>
-								<input type="checkbox" id="professional-sound-image" name="purchase_frequency" value="professional-sound-image"/>
+							</fieldset>
+							<fieldset>
+								<legend>Ratings</legend>
+								<input type="range" id="ratings" name="purchase_frequency" value="ratings" min="1" max="5" list="tickmarks"/>
+								<label for="ratings">I tend to rely on product reviews</label>
 							</fieldset>
 							<fieldset>
 								<legend>Overall Satisfaction</legend>
-								<label for="satisfaction">Satisfaction</label>
-								<input type="range" id="satisfaction" name="purchase_frequency" value="satisfaction" min="1" max="5"/>
+								<input type="range" id="satisfaction" name="purchase_frequency" value="satisfaction" min="1" max="5" list="tickmarks"/>
+								<label for="satisfaction">Overall I had a satisfying experience</label>
+								<datalist id="tickmarks">
+									<option value="1"></option>
+									<option value="2"></option>
+									<option value="3"></option>
+									<option value="4"></option>
+									<option value="5"></option>
+								</datalist>
 							</fieldset>
 						</fieldset>
 						<div>
@@ -128,3 +121,4 @@
 		<xinclude path="./shared_elements/footer.html"/>
 	</body>
 </html>
+
