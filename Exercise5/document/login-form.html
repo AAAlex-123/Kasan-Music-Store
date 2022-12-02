@@ -15,15 +15,15 @@
 						<fieldset>
 							<legend> User Information </legend>
 							<label for="full_name">Full Name</label>
-							<input id="full_name" name="full_name" placeholder="John Smith" required type="text">
+							<input id="full_name" name="full_name" placeholder="John Smith" required type="text" autocomplete="name">
 							<label for="email">Email</label>
 							<input id="email" name="email" placeholder="johnsmith@company.com" required type="email" autocomplete="email">
 							<label for="address">Residence Address</label>
-							<input id="address" name="address" placeholder="Jon Doe Str. 7" required type="text">
+							<input id="address" name="address" placeholder="Jon Doe Str. 7" required type="text" autocomplete="street-address">
 							<label for="telephone_number">Telephone Number</label>
-							<input id="telephone_number" name="telephone_number" required placeholder="6912345678" required type="tel" pattern="^69\d{8}|2\d{9}$">
+							<input id="telephone_number" name="telephone_number" required placeholder="6912345678" required type="tel" pattern="^69\d{8}|2\d{9}$" autocomplete="tel">
 							<label for="birth_date">Date of Birth</label>
-							<input id="birth_date" name="birth_date" required type="date" max="2022-01-01">
+							<input id="birth_date" name="birth_date" required type="date" max="2022-01-01" autocomplete="bday">
 						</fieldset>
 						<fieldset>
 							<legend>Shipping And Payment Information</legend>
@@ -46,11 +46,11 @@
 						<fieldset>
 							<legend>User Authentication</legend>
 							<label for="username">Username</label>
-							<input type="text" id="username" required placeholder="username"/>
+							<input type="text" id="username" name="username" required placeholder="username" autocomplete="username"/>
 							<label for="password">Password</label>
-							<input type="password" id="password" required placeholder="password"/>
+							<input type="password" id="password" name="password" required placeholder="password" autocomplete="current-password"/>
 							<label for="password_conf">Confirm Password</label>
-							<input type="password" id="password_conf" required placeholder="password"/>
+							<input type="password" id="password_conf" name="password_conf" required placeholder="password" autocomplete="new-password"/>
 						</fieldset>
 						<fieldset>
 							<legend>Communication Options</legend>
@@ -113,8 +113,8 @@
 							</fieldset>
 						</fieldset>
 						<div>
-							<input id="btn_submit" name="Submit" type="submit">
-							<input id="btn_reset" name="Reset" type="reset">
+							<input id="btn_submit" value="Submit" type="submit">
+							<input id="btn_reset" value="Reset" type="reset">
 						</div>
 					</form>
 				</section>
