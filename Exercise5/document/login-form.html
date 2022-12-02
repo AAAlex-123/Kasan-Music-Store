@@ -17,13 +17,13 @@
 							<label for="full_name">Full Name</label>
 							<input id="full_name" name="full_name" placeholder="John Smith" required type="text">
 							<label for="email">Email</label>
-							<input id="email" name="email" placeholder="johnsmith@company.com" required type="email">
+							<input id="email" name="email" placeholder="johnsmith@company.com" required type="email" autocomplete="email">
 							<label for="address">Residence Address</label>
 							<input id="address" name="address" placeholder="Jon Doe Str. 7" required type="text">
 							<label for="telephone_number">Telephone Number</label>
-							<input id="telephone_number" name="telephone_number" required placeholder="6912345678" required type="tel">
+							<input id="telephone_number" name="telephone_number" required placeholder="6912345678" required type="tel" pattern="^69\d{8}|2\d{9}$">
 							<label for="birth_date">Date of Birth</label>
-							<input id="birth_date" name="birth_date" required type="date">
+							<input id="birth_date" name="birth_date" required type="date" max="2022-01-01">
 						</fieldset>
 						<fieldset>
 							<legend>Shipping And Payment Information</legend>
@@ -41,14 +41,16 @@
 								</optgroup>
 							</select>
 							<label for="shipping_address">Shipping Address</label>
-							<input id="shipping_address" name="shipping_address" placeholder="Jon Doe Str. 7" required type="text">
+							<input id="shipping_address" name="shipping_address" placeholder="Strati Mirivili 24, 18233 Ag. Ioannis Rentis, Attikh" required type="text" pattern="^\w+?\s+\d+(?:-\d+?)?,\s*\d{5}\s+\w+?,\s*\w+?$">
 						</fieldset>
 						<fieldset>
 							<legend>User Authentication</legend>
 							<label for="username">Username</label>
-							<input type="text" id="username" name="purchase_frequency" required placeholder="username"/>
+							<input type="text" id="username" required placeholder="username"/>
 							<label for="password">Password</label>
-							<input type="password" id="password" name="purchase_frequency" required placeholder="password"/>
+							<input type="password" id="password" required placeholder="password"/>
+							<label for="password_conf">Confirm Password</label>
+							<input type="password" id="password_conf" required placeholder="password"/>
 						</fieldset>
 						<fieldset>
 							<legend>Communication Options</legend>
@@ -74,12 +76,12 @@
 							</fieldset>
 							<fieldset>
 								<legend>Most Frequent Payment Method</legend>
-								<input type="radio" id="cash" name="most_freq_payment_method" value="cash" required checked/>
-								<label for="cash">Cash</label>
-								<input type="radio" id="credit" name="most_freq_payment_method" value="credit" required/>
-								<label for="credit">Credit</label>
-								<input type="radio" id="paypal" name="most_freq_payment_method" value="paypal" required/>
-								<label for="paypal">Paypal</label>
+								<input list="payment_methods" name="payment_method">
+								<datalist id="payment_methods">
+									<option value="Cash">
+									<option value="Credit">
+									<option value="Paypal">
+								</datalist>
 							</fieldset>
 							<fieldset>
 								<legend>Most Frequently Bought Products</legend>
