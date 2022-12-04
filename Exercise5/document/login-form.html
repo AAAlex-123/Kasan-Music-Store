@@ -54,12 +54,16 @@
 						</fieldset>
 						<fieldset>
 							<legend>Communication Options</legend>
-							<select id="communication" name="communication" required>
-								<option value="sms">SMS</option>
-								<option value="email">E-Mail</option>
-								<option value="viber">Viber</option>
-								<option value="whatsapp">WhatsApp</option>
-							</select>
+							<input list="communication_methods" name="communication_method">
+							<datalist id="communication_methods">
+								<option value="Sms">
+								<option value="Facebook">
+								<option value="Instagram">
+								<option value="Viber">
+								<option value="WhatsApp">
+								<option value="Email">
+								<option value="Mailbox">
+							</datalist>
 						</fieldset>
 						<fieldset>
 							<legend>User Feedback</legend>
