@@ -9,7 +9,7 @@ function getValidateTelephoneNumberFunction(telElement) {
 
 		// check basic validity using the `pattern` html attribute
 		if (!telElement.checkValidity()) {
-			telElement.setCustomValidity("Number must be 10 digits long and must start with '69' for mobile numbers or '2' otherwise");
+			telElement.setCustomValidity("Number must be 10 digits long and must start with '69' for mobile numbers or '2' otherwise.");
 			return;
 		}
 
@@ -17,7 +17,7 @@ function getValidateTelephoneNumberFunction(telElement) {
 		userInput = telElement.value;
 
 		if (userInput.startsWith("2") && (validCodes.every(code => !userInput.startsWith(code)))) {
-			telElement.setCustomValidity("Number does not start with a valid landline code");
+			telElement.setCustomValidity("Number does not start with a valid landline code.");
 			return;
 		}
 
@@ -31,7 +31,16 @@ function getValidateBirthDateFunction(dateElement) {
 		// clear validity
 		dateElement.setCustomValidity("");
 
-		/* Code for validating date on `dateElement` here */
+		//check if the age of the user is legal
+		let todayDate= new Date();
+		let custDate= new Date(dateElement.value);
+		let diff=todayDate.getFullYear()-custDate.getFullYear();
+		console.log(diff)
+		if(diff<18 || diff>=112) {
+			dateElement.setCustomValidity("User is under 18 or older than 112, so they cannot register.")
+		} else{
+			dateElement.setCustomValidity("")
+		}
 	}
 }
 
@@ -41,14 +50,11 @@ function getValidatePasswordsFunction(pwElement, confirmPwElement) {
 		// clear validity
 		confirmPwElement.setCustomValidity("");
 
-		console.log("entered func")
 		// check if the passwords match
 		if (pwElement.value != confirmPwElement.value) {
 			confirmPwElement.setCustomValidity("Passwords do not match.")
-			console.log("wrong comparison")
 		} else {
-			this.setCustomValidity("")
-			console.log("correct comparison")
+			confirmPwElement.setCustomValidity("")
 		}
 	}
 }
