@@ -40,7 +40,7 @@ img.product-image {
 }
 
 img.product-image:hover {
-	height: 40rem;
+	height: 30rem;
 	width: auto;
 }
 
@@ -170,8 +170,7 @@ nav.details>ul>li {
     display: inline-block; 
 }
 
-/* TODO: fix visited color */
-nav.details>ul>li>a, nav.details>ul>li>a:visited {
+nav.details>ul>li>a:link, nav.details>ul>li>a:visited {
 	color: #00E;
     font: 2rem 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	text-decoration: none;
@@ -193,16 +192,6 @@ span.product-code {
 
 span.price {
 	font: 3.5rem 'Times New Roman', serif;
-}
-
-.container{
-    display:flex;
-    flex-flow: row nowrap;
-    border: 0.25em dotted rgb(153, 204, 255);
-    height:50em;
-    width:50em;
-    margin: 1em;
-
 }
 
 h3{
@@ -293,7 +282,6 @@ body>header>nav a.test:hover, a.test:active {
 
 footer {
 	padding: 2rem;
-    background: rgba(153, 204, 255, 0.3);
     background: linear-gradient(to bottom, rgba(62, 77, 92, 0.83), rgba(116, 169, 223, 0.64)), url("https://w0.peakpx.com/wallpaper/964/736/HD-wallpaper-piano-keys-macro.jpg")  no-repeat center fixed;
     background-size: cover;
 }
