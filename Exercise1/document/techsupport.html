@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 	<xinclude path="./shared_elements/head.html"/>
-	<body id="top">
+	<body>
 		<xinclude path="./shared_elements/header.html"/>
-
-		<h2>Tech Support Form</h2>
+		<xinclude path="./shared_elements/nav.html"/>
 		<main>
+			<header>
+				<h2>Tech Support Form</h2>
+			</header>
 			<article>
 				<form>
 					<fieldset>
@@ -36,7 +38,7 @@
 						<label for="receipt">Receipt</label>
 						<input type="file" id="receipt" name="receipt" required accept="pdf">
 
-						<label for="problem">Product Description</label>
+						<label for="problem">Problem Description</label>
 						<input type="text" id="problem" name="problem" required>
 					</fieldset>
 					<input type="submit" id="btn_submit" name="Submit">
