@@ -151,7 +151,7 @@ body {
 
 /* Font for all anchor elements */
 a {
-	font-family: font-a;
+	font-family: font-a, monospace;
 }
 
 /* Display main content container as a vertical flexbox */
@@ -166,14 +166,14 @@ body>main {
 
 /* Custom font for main paragraph elements */
 body>main>p {
-	font: bold 1.7rem font-index;
+	font: bold 1.7rem font-index, serif;
 	text-align: justify;
 	padding: 1rem;
 }
 
 /* Custom font for main content header */
 body>main>header>h2 {
-	font-family: font-h2;
+	font-family: font-h2, serif;
 	font-size: 2.5rem;
 }
 
@@ -340,7 +340,7 @@ body>header>a>img {
 /* The header's color is a gradient */
 body>header>h1 {
 	justify-self: center;
-	font: bold 3.5rem font-kasan;
+	font: bold 3.5rem font-kasan, serif;
 	background: -webkit-linear-gradient(rgb(201, 137, 42), rgb(8, 1, 20));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -415,7 +415,7 @@ span.product-code {
 }
 
 span.price {
-	padding-bottom: 1re;
+	padding-bottom: 1rem;
 	font: 3.5rem 'Times New Roman', serif;
 }
 
@@ -588,7 +588,6 @@ footer>a>img {
 footer>address {
 	display: flex;
 	flex-flow: column nowrap;
-	flex-direction: column;
 	align-items: flex-start;
 }
 
