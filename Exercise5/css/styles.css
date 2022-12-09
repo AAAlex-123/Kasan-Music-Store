@@ -176,6 +176,13 @@ body>main>article {
 	gap: 1.5rem
 }
 
+/* Styles for the paragraph on the index page */
+body>main>p {
+       font: bold 1.7rem font-index;
+       text-align: justify;
+       padding: 1rem;
+}
+
 
 /* ----------------------- *
  * --- ARTICLE>SECTION --- *

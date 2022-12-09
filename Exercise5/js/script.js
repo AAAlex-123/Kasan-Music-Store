@@ -31,15 +31,15 @@ function getValidateBirthDateFunction(dateElement) {
 		// clear validity
 		dateElement.setCustomValidity("");
 
-		//check if the age of the user is legal
-		let todayDate= new Date();
-		let custDate= new Date(dateElement.value);
-		let diff=todayDate.getFullYear()-custDate.getFullYear();
-		console.log(diff)
-		if(diff<18 || diff>=112) {
-			dateElement.setCustomValidity("User is under 18 or older than 112, so they cannot register.")
-		} else{
-			dateElement.setCustomValidity("")
+		// check if the age of the user is legal
+		let todayDate = new Date();
+		let custDate = new Date(dateElement.value);
+		let diff = todayDate.getFullYear() - custDate.getFullYear();
+
+		if (diff < 18 || diff > 112) {
+			dateElement.setCustomValidity("User is under 18 or older than 112, so they cannot register.");
+		} else {
+			dateElement.setCustomValidity("");
 		}
 	}
 }
@@ -48,17 +48,16 @@ function getValidatePasswordsFunction(pwElement, confirmPwElement) {
 
 	return () => {
 		// clear validity
+		pwElement.setCustomValidity("");
 		confirmPwElement.setCustomValidity("");
-		console.log("Passwords check.")
-		
 
 		// check if the passwords match
 		if (pwElement.value != confirmPwElement.value) {
+			pwElement.setCustomValidity("Passwords do not match.")
 			confirmPwElement.setCustomValidity("Passwords do not match.")
-			console.log("Passwords do not match.")
 		} else {
+			pwElement.setCustomValidity("")
 			confirmPwElement.setCustomValidity("")
-			console.log("Password match.")
 		}
 	}
 }
@@ -72,5 +71,7 @@ window.onload = () => {
 
 	let password = document.querySelector("#password")
 	let confirmPassword = document.querySelector("#password_conf")
-	confirmPassword.onChange = getValidatePasswordsFunction(password, confirmPassword);
+	password.onchange = getValidatePasswordsFunction(confirmPassword, password);
+	confirmPassword.onchange = getValidatePasswordsFunction(password, confirmPassword);
 }
+
