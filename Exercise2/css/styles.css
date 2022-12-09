@@ -137,8 +137,7 @@ nav.details>ul {
 }
 
 nav.details>ul>li {
-	margin: 1.5rem;
-	margin-top: 0.75rem;
+	margin: 0.75rem 1.5rem 1.5rem 1.5rem;
 	padding: 1rem;
 	border-radius: 25px;
 	background-color: white;
