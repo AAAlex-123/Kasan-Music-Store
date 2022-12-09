@@ -50,14 +50,18 @@ function getValidatePasswordsFunction(pwElement, confirmPwElement) {
 		// clear validity
 		pwElement.setCustomValidity("");
 		confirmPwElement.setCustomValidity("");
+		console.log("Passwords check.")
+		
 
 		// check if the passwords match
 		if (pwElement.value != confirmPwElement.value) {
 			pwElement.setCustomValidity("Passwords do not match.")
 			confirmPwElement.setCustomValidity("Passwords do not match.")
+			console.log("Passwords do not match.")
 		} else {
 			pwElement.setCustomValidity("")
 			confirmPwElement.setCustomValidity("")
+			console.log("Password match.")
 		}
 	}
 }

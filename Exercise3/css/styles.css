@@ -1,3 +1,11 @@
+/* ---------------------------------- *
+ * ------------@font-face-------------*
+ * ---------------------------------- */
+
+/*
+ * We have imported a couple of fonts that we downloaded online and
+ * applied them to different parts of the code
+ */
 @font-face {
 	font-family: font-kasan;
 	src: url("../font/Chicago.otf");
@@ -18,11 +26,17 @@
 	src: url("../font/Courier Prime.ttf");
 }
 
+/* Remove all default margin and padding */
 * {
 	margin: 0;
 	padding: 0;
 }
 
+/* ----------------- *
+ * --- BODY>MAIN --- *
+ * ----------------- */
+
+/* A grid with uniform color and a minimum width */
 body {
 	background-color: rgb(202, 236, 244);
     display: grid;
@@ -32,10 +46,12 @@ body {
     align-items: start;
 }
 
+/* Font for all anchor elements */
 a {
 	font-family: font-a;
 }
 
+/* Display main content container as a vertical flexbox */
 body>main {
 	padding: 1rem;
 	display: flex;
@@ -43,18 +59,35 @@ body>main {
 	align-items: center;
 	justify-content: flex-start;
 	gap: 1rem;
-
 	grid-column: 2;
 	grid-row: 2;
 }
 
+/* Custom font for main paragraph elements */
 body>main>p {
 	font: bold 1.7rem font-index;
-
 	text-align: justify;
 	padding: 1rem;
 }
 
+/* Custom font for main content header */
+main>header>h2 {
+    font-family: font-h2;
+    font-size: 2.5rem;
+}
+
+/* Display main content in a grid */
+body>main>article {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.5rem
+}
+
+/* ----------------------- *
+ * --- ARTICLE>SECTION --- *
+ * ----------------------- */
+
+/* All sections are contained in their own 'boxes' surrounded by a shadow */
 main>article>section {
 	padding: 1.2rem;
 	background-color: #FFFFFF;
@@ -62,35 +95,17 @@ main>article>section {
 	box-shadow: 0px 0px 5px 2px gray;
 }
 
-main>header>h2 {
-    font-family: font-h2;
-    font-size: 2.5rem;
-}
-
-body>main>article {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 1.5rem
-}
-
-/* https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html */
-body>main>article.single-product>section {
-	scroll-margin-top: 7rem;
-}
-
-body>main>article.single-product,
-body>main>article#tech-support {
-	grid-template-columns: repeat(1, 1fr);
-}
-
+/* Section header display */
 body>main>article>section>header {
 	display: block;
 }
 
+/* Section header font */
 body>main>article>section>header>strong>* {
 	font: bold 1.8rem 'Georgia', serif;
 }
 
+/* Links in section headers */
 body>main>article>section>header>strong>a:link,
 body>main>article>section>header>strong>a:visited {
 	color: rgb(15, 21, 138);
@@ -102,23 +117,41 @@ body>main>article>section>header>strong>a:hover {
 	text-decoration: underline;
 }
 
+
+/* --------------------------- *
+ * --- SPECIALISED ARTICLE --- *
+ * --------------------------- */
+
+/* Specialised layout for articles for product pages */
+body>main>article.single-product>section {
+	scroll-margin-top: 7rem;
+}
+
+/* Specialized layout for the tech support form */
+body>main>article.single-product,
+body>main>article#tech-support {
+	grid-template-columns: repeat(1, 1fr);
+}
+
+
+
 /* ---------------------------------- *
  * --- ARTICLE.SINGLE-PRODUCT>NAV --- *
  * ---------------------------------- */
 
+/* The product page's nav bar is also a flexbox and follows the user as they scroll down */
 body>main>article.single-product>nav {
 	padding: 1rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-
 	background-color: white;
 	box-shadow: 0px 0px 5px 2px gray;
-
 	position: sticky;
 	top: 0rem;
 }
 
+/* Modern look for the links in the product page's nav */
 body>main>article.single-product>nav>a {
 	padding: 1rem;
 	border-radius: 25px;
@@ -132,12 +165,18 @@ body>main>article.single-product>nav>a:visited {
 	text-decoration: none;
 }
 
+/* Customization of the product page's header */
 body>main>article.single-product>section>header>h3 {
 	padding-bottom: 1rem;
 	text-decoration: solid;
 	font: 2rem "Lucida Console", "Courier New", monospace;
 }
 
+/* ---------------------------- *
+ * --- TABLE, TH, TD, THEAD --- *
+ * ---------------------------- */
+
+/* Customazation for the tables, and all other elements within them */
 table, th, td {
 	border: 1px solid;
 	vertical-align: middle;
@@ -159,7 +198,7 @@ td {
  * --- ASIDE --- *
  * ------------- */
 
-/* https://stackoverflow.com/questions/218760/how-do-you-keep-parents-of-floated-elements-from-collapsing */
+/* Floating aside classes. The floating is cleared at each section */
 aside.left {
 	float: left;
 }
@@ -180,32 +219,33 @@ article>section::after {
  * --- BODY>HEADER --- *
  * ------------------- */
 
+/*The header is a grid of 1 row and 2 columns and its background is a gradient image*/
 body>header {
 	display: grid;
 	grid-template-rows: auto;
 	grid-template-columns: 2fr 7fr;
 	grid-gap: 1rem;
 	align-items: center;
-
 	grid-row: 1;
 	grid-column: 1 / 3;
-
 	background-image: linear-gradient(to bottom right, rgb(57, 126, 196), rgb(153, 204, 255));
 }
 
+/* Margin of anchors in header */
 body>header>a {
 	margin: 0 1.7rem;
 }
 
+/*Only one image in header*/
 body>header>a>img {
 	margin: 1rem;
 	width: 15rem;
 	height: auto;
 }
 
+/* The header's color is a gradient */
 body>header>h1 {
 	justify-self: center;
-
 	font: bold 3.5rem font-kasan;
 	background: -webkit-linear-gradient(rgb(201, 137, 42), rgb(8, 1, 20));
 	-webkit-background-clip: text;
@@ -216,6 +256,7 @@ body>header>h1 {
  * --- BODY>NAV --- *
  * ---------------- */
 
+ /* The main nav bar is a vertical flexbox */
 body>nav {
 	padding: 1rem;
 	display:flex;
@@ -224,17 +265,15 @@ body>nav {
 	text-align: center;
 	grid-row: 2;
 	grid-column: 1;
-
 	position: sticky;
 	top: 0rem;
-
 	font: 1.2rem "Lucida Console", "Courier New", monospace;
 }
 
+/* Placement of the anchor elements in nav */
 body>nav>a {
 	margin: 1em;
 	padding: 1rem 1.5rem;
-
 	border-radius: 3.5rem;
 	white-space: nowrap;
 }
@@ -255,10 +294,10 @@ body>nav>a:hover, body>nav>a:active {
  * --- A, P, SPAN --- *
  * ------------------ */
 
+/* Class for anchor elemnts that link back to another page. They resemble return buttons */
 a.return {
 	padding: 0.5rem;
 	font-size: 1rem;
-
 	border-radius: 5px;
 	background-color: rgb(250, 187, 166);
 	text-decoration: none;
@@ -268,6 +307,9 @@ a.return::before {
 	content: '<';
 }
 
+/*Each item description (short and extended) have different decoration, as do
+ * the product code and price tags.
+ */
 p.short-description {
 	font: 1.5rem 'Times New Roman', serif;
 }
@@ -287,6 +329,7 @@ span.price {
 	font: 3.5rem 'Times New Roman', serif;
 }
 
+/* The review section is a vertical flexbox to have the reviews one under the other */
 section#reviews article {
 	display: flex;
 	flex-direction: column;
@@ -297,6 +340,7 @@ section#reviews article {
  * --- IMG --- *
  * ----------- */
 
+/* Different dimensions and padding for different image classes */
 img.product-preview {
 	padding: 0 1.5rem 1.5rem 0;
 	max-width: 9rem;
@@ -335,6 +379,7 @@ img.type-image {
  * --- DETAILS --- *
  * --------------- */
 
+/* Customization of summary and ul elements inside details fields, this is used in product-categories */
 details>summary {
 	padding: 1rem;
 	font: normal 1.5rem 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -352,6 +397,7 @@ details>ul {
  * --- FORM --- *
  * ------------ */
 
+/*The form is inside a box of orange color with gray shadow*/
 form {
 	padding: 1.5rem;
 	border-radius: 30px;
@@ -359,6 +405,7 @@ form {
 	background-color: rgb(250, 187, 116);
 }
 
+/*Additionally, each fieldset has yellow background*/
 form>fieldset {
 	margin-bottom: 1.5rem;
 	padding: 0.75rem 1.25rem;
@@ -379,6 +426,7 @@ form input {
 	display: block;
 }
 
+/* Display all form elements one below the other and adjust their margin and padding */
 form>fieldset>input {
 	margin-top: 0.3rem;
 	margin-bottom: 1rem;
@@ -388,16 +436,18 @@ form>fieldset>input {
 	box-sizing: border-box;
 }
 
+/* Form elements change color on focus, when we click on it to write */
 form>fieldset>input:focus {
 	background-color: rgb(202, 236, 244);
 }
 
-
+/* Display the submit and reset buttons next to each other */
 form>div {
 	display: flex;
 	justify-content: space-evenly;
 }
 
+/* Form button styles */
 form input[type=submit],
 form input[type=reset] {
 	padding: 1rem 2rem;
@@ -417,33 +467,35 @@ form input[type=reset] {
  * -------------- */
 
 footer {
+	/* The footer is in its own flex box in a row wrap*/
 	padding: 2rem;
 	display: flex;
 	flex-flow: row wrap;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-evenly;
-
+	/* This code is used to add a lower opacity image that covers the entire footer and is on a fixed position*/
 	background: linear-gradient(to bottom, rgba(62, 77, 92, 0.83), rgba(116, 169, 223, 0.64)), url("https://w0.peakpx.com/wallpaper/964/736/HD-wallpaper-piano-keys-macro.jpg")  no-repeat center fixed;
 	background-size: cover;
-
 	grid-row: 3;
 	grid-column: 1 / 3;
 }
 
+/* Specify a standard color and font for the entire footer */
 footer>* {
 	margin: 0 1rem;
 	display: inline-block;
-
 	color: aliceblue;
 	font: 1rem "Lucida Console", "Courier New", monospace;
 }
 
+/*Positioning and sizing of the logo*/
 footer>a>img {
 	height: auto;
 	width: 7rem;
 }
 
+/*The address is also self-contained in its own flexbox so that all the lines can be under one another*/
 footer>address {
 	display: flex;
 	flex-flow: column nowrap;
@@ -451,22 +503,25 @@ footer>address {
 	align-items: flex-start;
 }
 
+/*Margin and font between lines of the address*/
 footer>address>p {
 	margin: 0.3rem 0;
-
 	font-style: italic;
 }
 
+/* Anchor elements' style */
 footer>address a:link, footer>address a:visited {
 	color: navy;
 	text-decoration: none;
 }
 
+/* Change color to red when the user hovers over it */
 footer>address a:hover, footer>address a:active {
 	color: red;
 	text-decoration: underline;
 }
 
+/*The social media icons are all placed in a grid of 2 rows */
 footer>section {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -476,15 +531,18 @@ footer>section {
 	align-items: center;
 }
 
+/* Text takes up all columns */
 footer>section>p {
 	grid-row: 1;
 	grid-column: 1 / 5;
 }
 
+/* Text takes up all columns */
 footer>section>a>img {
 	width: 3rem;
 }
 
+/*This id is used exclusively to link us back to the top of a page*/
 footer>a#top {
 	text-decoration: none;
 	font-size: 1.2rem;
