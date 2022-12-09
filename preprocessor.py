@@ -27,7 +27,7 @@ def get_soup(path):
 
 
 def write_soup(soup, path):
-    formatter = HTMLFormatter(indent=4)
+    formatter = HTMLFormatter(indent=4, void_element_close_prefix="")
     html = soup.prettify(formatter=formatter)
 
     with open(path, 'w') as f:
@@ -59,7 +59,6 @@ def process_file(path, root, out):
     outfile = os.path.join(out, os.path.basename(path))
 
     write_soup(processed_soup, outfile)
-
 
 
 def parse_args():
