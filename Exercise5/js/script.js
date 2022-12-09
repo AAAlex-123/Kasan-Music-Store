@@ -48,12 +48,15 @@ function getValidatePasswordsFunction(pwElement, confirmPwElement) {
 
 	return () => {
 		// clear validity
+		pwElement.setCustomValidity("");
 		confirmPwElement.setCustomValidity("");
 
 		// check if the passwords match
 		if (pwElement.value != confirmPwElement.value) {
+			pwElement.setCustomValidity("Passwords do not match.")
 			confirmPwElement.setCustomValidity("Passwords do not match.")
 		} else {
+			pwElement.setCustomValidity("")
 			confirmPwElement.setCustomValidity("")
 		}
 	}
@@ -68,5 +71,6 @@ window.onload = () => {
 
 	let password = document.querySelector("#password")
 	let confirmPassword = document.querySelector("#password_conf")
-	confirmPassword.onChange = getValidatePasswordsFunction(password, confirmPassword);
+	password.onchange = getValidatePasswordsFunction(confirmPassword, password);
+	confirmPassword.onchange = getValidatePasswordsFunction(password, confirmPassword);
 }
