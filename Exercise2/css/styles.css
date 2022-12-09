@@ -1,9 +1,14 @@
-
+/* Remove all default margin and padding */
 * {
 	margin: 0;
 	padding: 0;
-	/* border: 2px solid green; */
+
 }
+
+/* ----------------- *
+ * --- BODY/MAIN --- *
+ * ----------------- */
+
 
 body {
 	background-color: rgb(202, 236, 244);
@@ -12,6 +17,23 @@ main {
 	padding: 2.5rem;
 }
 
+/* Customization of h2 in main header*/
+main>header>h2 {
+    margin: 1rem 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+}
+
+h3{
+    text-decoration: solid;
+    font: 2rem "Lucida Console", "Courier New", monospace;
+}
+
+/* ----------------------- *
+ * --- ARTICLE>SECTION --- *
+ * ----------------------- */
+
+/* All sections are contained in their own 'boxes' surrounded by a shadow */
 main>article>section {
 	margin: 2rem 0;
 	padding: 1.2rem;
@@ -20,15 +42,197 @@ main>article>section {
 	box-shadow: 0px 0px 5px 2px gray;
 }
 
-main>header>h2 {
-    margin: 1rem 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2.5rem;
+/* Section header display */
+article>section>header {
+	display: block;
 }
 
+/* Section header font */
+article>section>header>strong {
+	font: bold 1.8rem 'Georgia', serif;
+}
+
+/* Links in section headers */
+article>section>header>strong>a:link, article>section>header>strong>a:visited{
+    color: rgb(15, 21, 138);
+    text-decoration: none;
+}
+
+article>section>header>strong>a:hover {
+    color:rgb(128, 40, 6);
+    text-decoration: underline;
+}
+
+/* ---------------------------- *
+ * --- TABLE, TH, TD, THEAD --- *
+ * ---------------------------- */
+
+/* Customazation for the tables, and all other elements within them */
+table, th, td {
+    border: 1px solid;
+}
+
+/* ------------- *
+ * --- ASIDE --- *
+ * ------------- */
+
+/* Floating aside classes. The floating is cleared at each section */
+aside.left {
+	float: left;
+}
+
+aside.right {
+	float: right;
+}
+
+section::after {
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+/* ------------------- *
+ * --- BODY>HEADER --- *
+ * ------------------- */
+
+/* The background is a gradient image */
+body>header {
+    background-image: linear-gradient(to bottom right, rgb(57, 126, 196), rgb(153, 204, 255));
+}
+
+/* Placement of the last child */
+body>header::after {
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+/*Only one image in header*/
+body>header img {
+	padding: 3rem;
+    height: auto;
+    width: 15rem;
+    display: inline;
+}
+
+/* The header's color is a gradient */
+body>header h1 {
+	font: bold 3rem "Times New Roman", serif;
+    background: -webkit-linear-gradient(rgb(201, 137, 42), rgb(8, 1, 20));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+}
+
+/* ---------------- *
+ * --- BODY>NAV ---- *
+ * ---------------- */
+
+/* Customization of the list elements in nav */
+nav.details>ul {
+	display: table;   
+	margin: 0 auto;
+}
+
+nav.details>ul>li {
+    margin: 1.5rem;
+    margin-top: 0.75rem;
+    padding: 1rem;
+    border-radius: 25px;
+    background-color: white;
+    display: inline-block; 
+}
+
+/* Styling of visited anchor elements */
+nav.details>ul>li>a:link, nav.details>ul>li>a:visited {
+	color: #00E;
+    font: 2rem 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	text-decoration: none;
+}
+
+/* Placement of the anchor elements in nav */
+body>header>nav a {
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-radius: 3.5rem;
+    display: inline-block;
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: rgb(208, 230, 245);
+}
+
+body>header>nav a.test:link, header>nav a.text:visited {
+    color: black;
+}
+
+body>header>nav a.test:hover, a.test:active {
+text-decoration: underline;
+background-color: rgb(65, 168, 236);
+color: white;
+}
+
+/* Display and decoration of nav */
+body>header>nav, header nav * {
+	display: block;
+}
+
+body>header>nav ul {
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+    body>header>nav ul li {
+        display: inline-block;
+        padding: 0.5rem 0.7rem;
+    }
+
+
+/* ------------------ *
+ * --- A, P, SPAN --- *
+ * ------------------ */
+
+ /* Class for anchor elemnts that link back to another page. They resemble return buttons */
+a.return {
+    padding: 0.5rem;
+    font: 1rem  Arial, Helvetica, sans-serif;
+
+    background-color: rgb(250, 187, 166);
+    border-radius: 5px;
+}
+
+a.return::before {
+	content: '<';
+}
+
+/*Each item description (short and extended) have different decoration, as do
+ * the product code and price tags.
+ */
+p.short-description {
+	font: 1.5rem 'Times New Roman', serif;
+}
+
+p.extended-description {
+	font: 1.0rem 'Times New Roman', serif;
+    text-align: justify;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+span.product-code {
+    font: italic 1rem 'Times New Roman', serif;
+}
+
+span.price {
+	font: 3.5rem 'Times New Roman', serif;
+}
+
+/* ----------- *
+ * --- IMG --- *
+ * ----------- */
+
+/* Different dimensions and padding for different image classes */
 img.product-preview {
     padding: 0 1.5rem 1.5rem 0;
-    /* max-height: 20%;*/
     width: 12rem;
     height: auto;
     display: block;
@@ -62,85 +266,17 @@ img.type-image {
     object-fit: cover;
 }
 
-article>section>header {
-	display: block;
-}
+/* --------------- *
+ * --- DETAILS --- *
+ * --------------- */
 
-article>section>header>strong {
-	font: bold 1.8rem 'Georgia', serif;
-}
-article>section>header>strong>a:link, article>section>header>strong>a:visited{
-    color: rgb(15, 21, 138);
-    text-decoration: none;
-}
-
-article>section>header>strong>a:hover {
-    color:rgb(128, 40, 6);
-    text-decoration: underline;
-}
-
-a.return {
-    padding: 0.5rem;
-    font: 1rem  Arial, Helvetica, sans-serif;
-
-    background-color: rgb(250, 187, 166);
-    border-radius: 5px;
-}
-
-a.return::before {
-	content: '<';
-}
-
-form {
-    background-color: rgb(250, 187, 116);
-	padding: 1.5rem;
-	border-radius: 30px;
-	box-shadow: 0px 0px 5px 2px gray;
-}
-
-form legend {
-	font: bold 1.5rem Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: rgb(47, 51, 54);
-}
-
-form label, form input {
-	font: bold 0.75rem Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(47, 51, 54);
-}
-
-form fieldset {
-    background-color: rgb(253, 229, 120);
-    padding: 0.75rem 1.25rem;
-    margin-bottom: 1.5rem;
-}
-
-form input:not([type="submit"], [type="reset"]) {
-    border-width: 0.25rem;
-    width: 100%;
-    padding: 0.75rem 1.25rem;
-    margin: 0.5rem 0;
-    box-sizing: border-box;
-}
-
-input[type=button], input[type=submit], input[type=reset] {
-    background-color: #33bcdf;
-    border: none;
-    color: white;
-    padding: 1rem 2rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    margin: 0.25rem 0.125rem;
-    cursor: pointer;
-    border-radius: 10px;
-}
-
+/* Customization of summary and ul elements inside details fields, this is used in product-categories */
 details summary {
 	padding: 1rem;
 	font: normal 1.5rem 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/*Specific customization of ul elements in product list*/
 details ul.product-list {
     display: inline-block;
     list-style-type: circle; 
@@ -156,136 +292,71 @@ details ul.product-list:first-child {
     margin-top: 0rem;
 }
 
-nav.details>ul {
-	display: table;   
-	margin: 0 auto;
+/* ------------ *
+ * --- FORM --- *
+ * ------------ */
+
+/*The form is inside a box of orange color with gray shadow*/
+form {
+    background-color: rgb(250, 187, 116);
+	padding: 1.5rem;
+	border-radius: 30px;
+	box-shadow: 0px 0px 5px 2px gray;
 }
 
-nav.details>ul>li {
-    margin: 1.5rem;
-    margin-top: 0.75rem;
-    padding: 1rem;
-    border-radius: 25px;
-    background-color: white;
-    display: inline-block; 
+/* Customization of form elements */
+form legend {
+	font: bold 1.5rem Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(47, 51, 54);
 }
 
-nav.details>ul>li>a:link, nav.details>ul>li>a:visited {
-	color: #00E;
-    font: 2rem 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	text-decoration: none;
+form label, form input {
+	font: bold 0.75rem Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(47, 51, 54);
 }
 
-p.short-description {
-	font: 1.5rem 'Times New Roman', serif;
+/*Additionally, each fieldset has yellow background*/
+form fieldset {
+    background-color: rgb(253, 229, 120);
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1.5rem;
 }
 
-p.extended-description {
-	font: 1.0rem 'Times New Roman', serif;
-    text-align: justify;
-    padding: 0.5em 0.5em 0.5em 0.5em;
+/* Form non-button styles */
+form input:not([type="submit"], [type="reset"]) {
+    border-width: 0.25rem;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
 }
 
-span.product-code {
-    font: italic 1rem 'Times New Roman', serif;
-}
-
-span.price {
-	font: 3.5rem 'Times New Roman', serif;
-}
-
-h3{
-    text-decoration: solid;
-    font: 2rem "Lucida Console", "Courier New", monospace;
-}
-
-table, th, td {
-    border: 1px solid;
-}
-
-/* TODO: replace this hacky code on Exercise3 */
-/* https://stackoverflow.com/questions/218760/how-do-you-keep-parents-of-floated-elements-from-collapsing */
-aside.left {
-	float: left;
-}
-
-aside.right {
-	float: right;
-}
-
-section::after {
-	content: " ";
-	display: block;
-	height: 0;
-	clear: both;
-}
-
-body>header {
-    background-image: linear-gradient(to bottom right, rgb(57, 126, 196), rgb(153, 204, 255));
-}
-
-body>header::after {
-	content: " ";
-	display: block;
-	height: 0;
-	clear: both;
-}
-
-body>header img {
-	padding: 3rem;
-    height: auto;
-    width: 15rem;
-    display: inline;
-}
-
-body>header h1 {
-	font: bold 3rem "Times New Roman", serif;
-
-    background: -webkit-linear-gradient(rgb(201, 137, 42), rgb(8, 1, 20));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: block;
-}
-
-body>header>nav, header nav * {
-	display: block;
-}
-
-body>header>nav ul {
-    margin: 0 auto;
-    font-size: 1.2rem;
-}
-
-    body>header>nav ul li {
-        display: inline-block;
-        padding: 0.5rem 0.7rem;
-    }
-
-    body>header>nav a {
-        text-decoration: none;
-        padding: 1rem 1.5rem;
-        border-radius: 3.5rem;
-        display: inline-block;
-	    font-family: "Lucida Console", "Courier New", monospace;
-        background-color: rgb(208, 230, 245);
-    }
-
-    body>header>nav a.test:link, header>nav a.text:visited {
-        color: black;
-    }
-
-body>header>nav a.test:hover, a.test:active {
-    text-decoration: underline;
-    background-color: rgb(65, 168, 236);
+/* Form button styles */
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #33bcdf;
+    border: none;
     color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0.25rem 0.125rem;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
+/* -------------- *
+ * --- FOOTER --- *
+ * -------------- */
 footer {
 	padding: 2rem;
+    /* This code is used to add a lower opacity image that covers the entire footer and is on a fixed position*/
     background: linear-gradient(to bottom, rgba(62, 77, 92, 0.83), rgba(116, 169, 223, 0.64)), url("https://w0.peakpx.com/wallpaper/964/736/HD-wallpaper-piano-keys-macro.jpg")  no-repeat center fixed;
     background-size: cover;
 }
 
+/* Display of last child */
 footer::after {
 	content: " ";
 	display: block;
@@ -293,20 +364,24 @@ footer::after {
 	clear: both;
 }
 
+/* Decoration of aside anchors */
 footer>aside a {
     text-decoration: underline;
 }
 
+/* Placement of aside image*/
 footer>aside img {
     height: auto;
     width: 7rem;
     margin-right: 1rem;
 }
 
+/* Placement of section */
 footer>section {
 	display: inline-block;
 }
 
+/* Styling of addresses in section*/
 footer>section>address {
     font: 1rem "Lucida Console", "Courier New", monospace;
     text-decoration: solid;
@@ -314,6 +389,7 @@ footer>section>address {
     line-height: 2rem;
 }
 
+/* Anchor elements' style */
 footer>section>address a:link, footer>section>address a:visited {
 	color: navy;
 	text-decoration: none;
@@ -324,11 +400,13 @@ footer>section>address a:hover, footer>section>address a:active {
     text-decoration: underline;
 }
 
+/* Color and font for p elements in sections of footer */
 footer>section>p {
     color: aliceblue;
     font-family: "Lucida Console", "Courier New", monospace;
 }
 
+/* Placement and style of list  */
 footer>section>ul {
     display: inline-block;  
     margin: 0 auto;
@@ -336,15 +414,18 @@ footer>section>ul {
     padding-top: 1.25rem;
 }
 
+/* Placement of list elements */
 footer>section>ul li {
     display: inline-block;
     padding: 0 1.5rem;
 }
 
+/* Size of images in the list */
 footer>section>ul li img {
 	width: 3rem;
 }
 
+/*This id is used exclusively to link us back to the top of a page*/
 footer>a#top {
     text-decoration: none;
     display: inline-block;
