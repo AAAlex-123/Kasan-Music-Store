@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<xinclude path="./shared_elements/head.html"/>
-	<body id="top">
+	<body>
 		<xinclude path="./shared_elements/header.html"/>
 		<xinclude path="./shared_elements/nav.html"/>
 		<main>
@@ -19,7 +19,7 @@
 							<label for="email">Email</label>
 							<input id="email" name="email" placeholder="johnsmith@company.com" required type="email" autocomplete="email">
 							<label for="address">Residence Address</label>
-							<input id="address" name="address" placeholder="Jon Doe Str. 7" required type="text" autocomplete="street-address">
+							<textarea id="address" name="address" placeholder="Jon Doe Str. 7" required autocomplete="street-address"></textarea>
 							<label for="telephone_number">Telephone Number</label>
 							<input id="telephone_number" name="telephone_number" required placeholder="6912345678" required type="tel" pattern="^69\d{8}|2\d{9}$" autocomplete="tel">
 							<label for="birth_date">Date of Birth</label>
@@ -29,83 +29,84 @@
 							<legend>Shipping And Payment Information</legend>
 							<label for="payment_method">Payment Method</label>
 							<select id="payment_method" name="payment" required>
+								<option value="">Choose Payment Method</option>
 								<optgroup label="Pay On Delivery">
-									<option value="cash">Pay On Delivery</option>
+									<option>Pay On Delivery</option>
 								</optgroup>
 								<optgroup label="Bank Order">
-									<option value="credit">Credit Card</option>
-									<option value="deposit">Deposit In Account</option>
+									<option>Credit Card</option>
+									<option>Deposit In Account</option>
 								</optgroup>
 								<optgroup label="Other Ways">
-									<option value="Paypal">Paypal</option>
+									<option>Paypal</option>
 								</optgroup>
 							</select>
 							<label for="shipping_address">Shipping Address</label>
-							<input id="shipping_address" name="shipping_address" placeholder="Strati Mirivili 24, 18233 Ag. Ioannis Rentis, Attikh" required type="text" pattern="^\w+?\s+\d+(?:-\d+?)?,\s*\d{5}\s+\w+?,\s*\w+?$">
+							<textarea id="shipping_address" name="shipping_address" placeholder="Strati Mirivili 24, 18233 Ag. Ioannis Rentis, Attikh" required rows="3"></textarea>
 						</fieldset>
 						<fieldset>
 							<legend>User Authentication</legend>
 							<label for="username">Username</label>
-							<input type="text" id="username" name="username" required placeholder="username" autocomplete="username"/>
+							<input type="text" id="username" name="username" required placeholder="username" autocomplete="username">
 							<label for="password">Password</label>
-							<input type="password" id="password" name="password" required placeholder="password" autocomplete="current-password"/>
+							<input type="password" id="password" name="password" required placeholder="password" autocomplete="current-password">
 							<label for="password_conf">Confirm Password</label>
-							<input type="password" id="password_conf" name="password_conf" required placeholder="password" autocomplete="new-password"/>
+							<input type="password" id="password_conf" name="password_conf" required placeholder="password" autocomplete="new-password">
 						</fieldset>
 						<fieldset>
 							<legend>Communication Options</legend>
 							<input list="communication_methods" name="communication_method">
 							<datalist id="communication_methods">
-								<option value="Sms">
-								<option value="Facebook">
-								<option value="Instagram">
-								<option value="Viber">
-								<option value="WhatsApp">
-								<option value="Email">
-								<option value="Mailbox">
+								<option value="Sms"></option>
+								<option value="Facebook"></option>
+								<option value="Instagram"></option>
+								<option value="Viber"></option>
+								<option value="WhatsApp"></option>
+								<option value="Email"></option>
+								<option value="Mailbox"></option>
 							</datalist>
 						</fieldset>
 						<fieldset>
 							<legend>User Feedback</legend>
 							<fieldset>
 								<legend>Purchase Frequency</legend>
-								<input type="radio" id="daily" name="purchace-freq" value="daily" required checked/>
+								<input type="radio" id="daily" name="purchace-freq" value="daily" required checked>
 								<label for="daily">Daily</label>
-								<input type="radio" id="weekly" name="purchace-freq" value="weekly" required/>
+								<input type="radio" id="weekly" name="purchace-freq" value="weekly" required>
 								<label for="weekly">Weekly</label>
-								<input type="radio" id="monthly" name="purchace-freq" value="monthly" required/>
+								<input type="radio" id="monthly" name="purchace-freq" value="monthly" required>
 								<label for="monthly">Montly</label>
-								<input type="radio" id="yearly-or-less" name="purchace-freq" value="yearly-or-less" required/>
+								<input type="radio" id="yearly-or-less" name="purchace-freq" value="yearly-or-less" required>
 								<label for="yearly-or-less">Yearly or less frequently</label>
 							</fieldset>
 							<fieldset>
 								<legend>Most Frequent Payment Method</legend>
 								<input list="payment_methods" name="payment_method">
 								<datalist id="payment_methods">
-									<option value="Cash">
-									<option value="Credit">
-									<option value="Paypal">
+									<option value="Cash"></option>
+									<option value="Credit"></option>
+									<option value="Paypal"></option>
 								</datalist>
 							</fieldset>
 							<fieldset>
 								<legend>Most Frequently Bought Products</legend>
-								<input type="checkbox" id="partiture-books" name="most_freq_category" value="partiture-books"/>
+								<input type="checkbox" id="partiture-books" name="most_freq_category" value="partiture-books">
 								<label for="partiture-books">Partiture Books</label>
-								<input type="checkbox" id="music-instruments" name="most_freq_category" value="music-instruments"/>
+								<input type="checkbox" id="music-instruments" name="most_freq_category" value="music-instruments">
 								<label for="music-instruments">Music Instruments</label>
-								<input type="checkbox" id="dj-equipment" name="most_freq_category" value="dj-equipment"/>
+								<input type="checkbox" id="dj-equipment" name="most_freq_category" value="dj-equipment">
 								<label for="dj-equipment">DJ Equipment</label>
-								<input type="checkbox" id="professional-sound-image" name="most_freq_category" value="professional-sound-image"/>
+								<input type="checkbox" id="professional-sound-image" name="most_freq_category" value="professional-sound-image">
 								<label for="professional-sound-image">Professional Sound/Image</label>
 							</fieldset>
 							<fieldset>
 								<legend>Ratings</legend>
-								<input type="range" id="ratings" name="purchase_frequency" value="ratings" min="1" max="5" list="tickmarks"/>
+								<input type="range" id="ratings" name="purchase_frequency" value="3" min="1" max="5" list="tickmarks">
 								<label for="ratings">I tend to rely on product reviews</label>
 							</fieldset>
 							<fieldset>
 								<legend>Overall Satisfaction</legend>
-								<input type="range" id="satisfaction" name="purchase_frequency" value="satisfaction" min="1" max="5" list="tickmarks"/>
+								<input type="range" id="satisfaction" name="purchase_frequency" value="3" min="1" max="5" list="tickmarks">
 								<label for="satisfaction">Overall I had a satisfying experience</label>
 								<datalist id="tickmarks">
 									<option value="1"></option>

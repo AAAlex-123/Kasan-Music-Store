@@ -151,7 +151,7 @@ body {
 
 /* Font for all anchor elements */
 a {
-	font-family: font-a;
+	font-family: font-a, monospace;
 }
 
 /* Display main content container as a vertical flexbox */
@@ -166,7 +166,7 @@ body>main {
 
 /* Custom font for main content header */
 body>main>header>h2 {
-	font-family: font-h2;
+	font-family: font-h2, serif;
 	font-size: 2.5rem;
 }
 
@@ -178,7 +178,7 @@ body>main>article {
 
 /* Styles for the paragraph on the index page */
 body>main>p {
-       font: bold 1.7rem font-index;
+       font: bold 1.7rem font-index, serif;
        text-align: justify;
        padding: 1rem;
 }
@@ -335,7 +335,7 @@ body>header>a>picture>img {
 /* The header's color is a gradient */
 body>header>h1 {
 	justify-self: center;
-	font: bold 3.5rem font-kasan;
+	font: bold 3.5rem font-kasan, serif;
 	background: -webkit-linear-gradient(rgb(201, 137, 42), rgb(8, 1, 20));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -413,7 +413,7 @@ span.product-code {
 }
 
 span.price {
-	padding-bottom: 1re;
+	padding-bottom: 1rem;
 	font: 3.5rem 'Times New Roman', serif;
 }
 
@@ -506,13 +506,18 @@ form legend {
 	color: rgb(47, 51, 54);
 }
 
-form label, form input, form select {
+form label,
+form input,
+form select,
+form textarea {
 	font-weight: bold;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	color: rgb(47, 51, 54);
 }
 
-form input, form select {
+form input,
+form select,
+form textarea {
 	font-size: 0.7rem;
 }
 
@@ -521,7 +526,9 @@ form label {
 }
 
 /* Display all form elements one below the other and adjust their margin and padding */
-form input, form select {
+form input,
+form select,
+form textarea {
 	display: block;
 	margin-top: 0.3rem;
 	margin-bottom: 1rem;
@@ -534,13 +541,15 @@ form input, form select {
 
 /* Form elements change color on focus, when we click on it to write */
 form input:focus,
-form select:focus {
+form select:focus,
+form textarea:focus {
 	background-color: rgb(202, 236, 244);
 }
 
 /* Required form elements change color when invalid */
 form input:required:not(:placeholder-shown):not(:focus):invalid,
-form select:required:not(:placeholder-shown):not(:focus):invalid {
+form select:required:not(:placeholder-shown):not(:focus):invalid,
+form textarea:required:not(:placeholder-shown):not(:focus):invalid {
 	border-color: red;
 }
 
@@ -623,7 +632,6 @@ footer>a>img {
 footer>address {
 	display: flex;
 	flex-flow: column nowrap;
-	flex-direction: column;
 	align-items: flex-start;
 	gap: 0.7rem;
 }

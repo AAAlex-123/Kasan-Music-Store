@@ -62,6 +62,22 @@ function getValidatePasswordsFunction(pwElement, confirmPwElement) {
 	}
 }
 
+function getValidateAddressFunction(addressElement) {
+
+	return () => {
+
+		let addressRegex = /^\w+?\s+\d+(?:-\d+?)?,\s*\d{5}\s+\w+?,\s*\w+?$/;
+
+		// check if address matches the regex
+		if (!addressElement.value.match(addressRegex)) {
+			addressElement.setCustomValidity("Invalid address. Please match the placeholder text");
+		} else {
+			addressElement.setCustomValidity("");
+		}
+	}
+}
+
+
 window.onload = () => {
 	let telephoneNumber = document.querySelector("#telephone_number");
 	telephoneNumber.onchange = getValidateTelephoneNumberFunction(telephoneNumber);
@@ -73,5 +89,8 @@ window.onload = () => {
 	let confirmPassword = document.querySelector("#password_conf")
 	password.onchange = getValidatePasswordsFunction(confirmPassword, password);
 	confirmPassword.onchange = getValidatePasswordsFunction(password, confirmPassword);
+
+	let shippingAddress = document.querySelector("#shipping_address")
+	shippingAddress.onchange = getValidateAddressFunction(shippingAddress);
 }
 
