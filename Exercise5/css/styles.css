@@ -601,7 +601,6 @@ footer {
 
 /* Specify a standard color and font for the entire footer */
 footer>* {
-	/* I'm not sure if this line does anything */
 	display: inline-block;
 	color: aliceblue;
 	font: 1rem "Lucida Console", "Courier New", monospace;
@@ -657,7 +656,7 @@ footer>section>p {
 	grid-column: 1 / 5;
 }
 
-/* Each icon takes up one column automatically */
+/* Text takes up all columns */
 footer>section>a>img {
 	width: 3rem;
 }
