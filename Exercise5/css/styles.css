@@ -318,10 +318,10 @@ body>header {
 	background-image: linear-gradient(to bottom right, rgb(57, 126, 196), rgb(153, 204, 255));
 }
 
-/* Header's image */
-body>header>a>img {
+/* Header's responsive image */
+body>header>a>picture>img {
 	margin: 1rem;
-	width: 15rem;
+	width: 100%;
 	height: auto;
 }
 
